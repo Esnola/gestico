@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
+Route::view('/', 'home')->name('home');
 Route::view('/servicios', 'pages.services')->name('services');
 Route::view('/fincas', 'pages.property-management')->name('property-management');
 Route::view('/asesoria', 'pages.advisory')->name('advisory');

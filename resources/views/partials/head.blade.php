@@ -15,7 +15,5 @@
 <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v={{ $faviconVersion }}" sizes="any">
 <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}?v={{ $faviconVersion }}">
 
-@fonts
-
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @fluxAppearance
