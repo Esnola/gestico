@@ -1,8 +1,8 @@
 <x-layouts.public title="Asesoría económico-financiera, fiscal y laboral">
     <section class="bg-[#eef1ec] py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <p class="text-sm font-bold uppercase text-[#a98211]">Asesoría</p>
-            <h1 class="mt-4 max-w-4xl text-4xl font-black leading-tight text-[#1f3336] sm:text-5xl">Cuentas, impuestos y obligaciones laborales bajo control.</h1>
+            <p class="text-sm font-normal uppercase tracking-[0.04em] text-[#a98211]">Asesoría</p>
+            <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-[#1f3336] sm:text-5xl">Cuentas, impuestos y obligaciones laborales bajo control.</h1>
             <p class="mt-6 max-w-3xl text-lg leading-8 text-[#536467]">La parte económica de una comunidad necesita precisión, calendario y explicaciones comprensibles. Integramos contabilidad, bancos, fiscalidad y gestión laboral en un mismo flujo.</p>
         </div>
     </section>
@@ -15,7 +15,7 @@
                 ['Laboral', 'Gestión de nóminas, seguros sociales, contratos y documentación laboral vinculada a la comunidad.'],
             ] as [$title, $text])
                 <article class="rounded-lg border border-[#e2dacb] bg-[#fbfaf6] p-6">
-                    <h2 class="text-xl font-black text-[#253b3e]">{{ $title }}</h2>
+                    <h2 class="font-gestico-serif text-2xl font-semibold text-[#253b3e]">{{ $title }}</h2>
                     <p class="mt-4 leading-7 text-[#5d6f72]">{{ $text }}</p>
                 </article>
             @endforeach
