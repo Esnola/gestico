@@ -24,8 +24,11 @@
                     </div>
                 </div>
             </div>
-            <div class="relative">
-                <div class="rounded-lg border border-[#d8d0bd] bg-white p-5 shadow-xl shadow-[#43595d]/10">
+            <div class="relative min-h-[520px] overflow-hidden lg:overflow-visible">
+                <img src="{{ asset('images/home-document-management.svg') }}" alt="Documentación organizada para comunidades" class="home-slide-image home-slide-image-right absolute right-0 top-0 w-[74%] max-w-[360px] rounded-md border border-[#d8d0bd] bg-white shadow-xl shadow-[#43595d]/10">
+                <img src="{{ asset('images/home-community-care.svg') }}" alt="Portal residencial gestionado" class="home-slide-image home-slide-image-left absolute bottom-0 left-0 w-[70%] max-w-[340px] rounded-md border border-[#d8d0bd] bg-white shadow-xl shadow-[#43595d]/10">
+
+                <div class="relative z-10 mx-auto mt-32 max-w-[430px] rounded-lg border border-[#d8d0bd] bg-white/95 p-5 shadow-xl shadow-[#43595d]/10 backdrop-blur sm:mt-28 lg:mr-4">
                     <div class="flex items-center justify-between border-b border-[#e7dfcf] pb-4">
                         <div>
                             <p class="text-xs font-normal uppercase tracking-[0.04em] text-[#a98211]">Estado de comunidad</p>

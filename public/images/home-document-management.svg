@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Documentación comunitaria organizada</title>
+  <desc id="desc">Ilustración de carpetas, documentos, gráficos y llaves para gestión de comunidades.</desc>
+  <rect width="720" height="480" rx="28" fill="#fbfaf6"/>
+  <rect x="64" y="86" width="360" height="250" rx="18" fill="#ffffff" stroke="#ded5c2" stroke-width="3"/>
+  <path d="M91 132h126M91 166h216M91 200h188M91 234h236" stroke="#465b5e" stroke-width="14" stroke-linecap="round" opacity=".22"/>
+  <path d="M91 290h138" stroke="#a98211" stroke-width="18" stroke-linecap="round"/>
+  <rect x="444" y="118" width="188" height="250" rx="20" fill="#213639"/>
+  <path d="M484 296V238M528 296V196M572 296V158" stroke="#d4a824" stroke-width="22" stroke-linecap="round"/>
+  <path d="M484 322h98" stroke="#eef1ec" stroke-width="8" stroke-linecap="round" opacity=".45"/>
+  <circle cx="122" cy="374" r="28" fill="#d4a824"/>
+  <circle cx="174" cy="374" r="18" fill="none" stroke="#a98211" stroke-width="12"/>
+  <path d="M191 374h64m-24 0v25m24-25v19" stroke="#a98211" stroke-width="12" stroke-linecap="round"/>
+  <path d="M438 86c39-28 112-20 148 25" fill="none" stroke="#a98211" stroke-width="4" opacity=".28"/>
+  <path d="M68 406c108 30 238 30 334 0" fill="none" stroke="#213639" stroke-width="4" opacity=".12"/>
+</svg>

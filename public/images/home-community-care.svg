@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Comunidad de propietarios atendida</title>
+  <desc id="desc">Ilustración de edificio residencial, portal y elementos de administración de fincas.</desc>
+  <rect width="720" height="480" rx="28" fill="#eef1ec"/>
+  <rect x="88" y="92" width="236" height="296" rx="16" fill="#ffffff" stroke="#d8d0bd" stroke-width="3"/>
+  <rect x="132" y="136" width="48" height="54" rx="8" fill="#d9e3e4"/>
+  <rect x="218" y="136" width="48" height="54" rx="8" fill="#d9e3e4"/>
+  <rect x="132" y="222" width="48" height="54" rx="8" fill="#d9e3e4"/>
+  <rect x="218" y="222" width="48" height="54" rx="8" fill="#d9e3e4"/>
+  <path d="M113 388h242" stroke="#a98211" stroke-width="16" stroke-linecap="round"/>
+  <rect x="398" y="118" width="210" height="278" rx="20" fill="#213639"/>
+  <rect x="434" y="158" width="138" height="30" rx="8" fill="#fbfaf6" opacity=".95"/>
+  <rect x="434" y="213" width="138" height="30" rx="8" fill="#fbfaf6" opacity=".85"/>
+  <rect x="434" y="268" width="138" height="30" rx="8" fill="#fbfaf6" opacity=".75"/>
+  <circle cx="450" cy="350" r="22" fill="#d4a824"/>
+  <path d="M484 350h75m-26 0v27m26-27v20" stroke="#d4a824" stroke-width="12" stroke-linecap="round"/>
+  <path d="M78 92l128-62 128 62" fill="none" stroke="#a98211" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M392 89c41-31 120-25 158 20" fill="none" stroke="#a98211" stroke-width="4" opacity=".25"/>
+  <path d="M114 430c132 24 335 22 492-5" fill="none" stroke="#213639" stroke-width="5" opacity=".12"/>
+</svg>
