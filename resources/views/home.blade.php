@@ -150,12 +150,7 @@
           Una administración pensada para comunidades que necesitan orden, transparencia y continuidad.</h2>
       </div>
       <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        @foreach ([
-            ['Contabilidad y bancos', 'Presupuestos, remesas, estados de cuentas, pagos, cierres e informes periódicos.'],
-            ['Fiscal y laboral', 'Modelos fiscales, obligaciones laborales, nóminas, seguros sociales y seguimiento documental.'],
-            ['Fincas e incidencias', 'Proveedores, mantenimiento, reparaciones, seguros, siniestros y ejecución de acuerdos.'],
-            ['Comunicación clara', 'Convocatorias, actas, circulares, trazabilidad de decisiones y atención a propietarios.'],
-        ] as [$title, $text])
+        @foreach (config('gestico.home') as [$title, $text])
           <article
                   class="rounded-lg border border-brand-border-soft bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
             <h3 class="font-gestico-serif text-xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
@@ -206,8 +201,10 @@
       </div>
       <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
         <div class="grid gap-3">
-          @foreach (['Contratos y documentación comunitaria', 'Movimientos bancarios e informes', 'Facturas, presupuestos y cierres', 'Comunicaciones y avisos importantes'] as $item)
-            <div class="rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-muted">{{ $item }}</div>
+          @foreach (config('gestico.home_dos') as [$texto, $view, $icono])
+            <div class="flex items-center gap-4 rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-muted">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0"  viewBox=" {{ $view ? '0 0 24 24': '0 0 384 512'}}" class="size-6">{!! $icono !!}</svg>
+                {{ $texto }}</div>
           @endforeach
         </div>
       </div>

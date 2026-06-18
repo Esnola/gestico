@@ -57,8 +57,8 @@
       <div class="overflow-hidden rounded-lg border border-brand-border bg-brand-surface shadow-sm dark:border-brand-night-border dark:bg-brand-night-raised">
         <iframe
                 title="Mapa de ubicación de Gestico Barbanza"
-                src="{{ config('gestico.maps_embed_url') }}"
-                class="h-[420px] w-full border-0 sm:h-[500px]"
+                src="{{ config('gestico.maps_satelite') }}"
+                class="h-105 w-full border-0 sm:h-125"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 allowfullscreen></iframe>
