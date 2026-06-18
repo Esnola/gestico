@@ -12,7 +12,7 @@ test('public header renders a light and dark theme toggle', function () {
 
 test('theme script only accepts light and dark preferences', function () {
     $script = file_get_contents(resource_path('js/app.js'));
-    $head = file_get_contents(resource_path('views/partials/head.blade.php'));
+    $head = file_get_contents(resource_path('views/components/head.blade.php'));
 
     expect($script)
         ->toContain("const validThemes = ['light', 'dark']")

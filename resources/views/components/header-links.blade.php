@@ -1,0 +1,20 @@
+@props([
+    'isfooter' => false,
+    'variant' => null,
+])
+
+@php
+  $navigationVariant = $variant ?? ($isfooter ? 'footer' : 'desktop');
+@endphp
+
+<nav {{ $attributes->class([
+    'hidden items-center gap-7 text-sm font-normal text-brand-text dark:text-brand-night-muted lg:flex' => $navigationVariant === 'desktop',
+    'grid dark:bg-brand-night text-base font-bold text-brand-text dark:bg-brand-night-panel dark:text-brand-night-muted' => $navigationVariant === 'mobile',
+    'mt-4 grid gap-2 text-sm text-brand-frost' => $navigationVariant === 'footer',
+]) }}>
+  <x-header-link texto="Servicios" destino="servicios" :variant="$navigationVariant"/>
+  <x-header-link texto="Fincas" destino="fincas" :variant="$navigationVariant"/>
+  <x-header-link texto="Asesoría" destino="asesoria" :variant="$navigationVariant"/>
+  <x-header-link texto="Ubicación" destino="location" :variant="$navigationVariant"/>
+  <x-header-link texto="Contacto" destino="contacto" :variant="$navigationVariant"/>
+</nav>

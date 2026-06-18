@@ -1,7 +1,7 @@
 <?php
 
 it('shows the advisory page with expanded economic and labor content', function (): void {
-    $response = $this->get(route('advisory'));
+    $response = $this->get(route('asesoria'));
 
     $response
         ->assertOk()

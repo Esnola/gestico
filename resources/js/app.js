@@ -1,6 +1,9 @@
 const fluxThemeStorageKey = 'flux.appearance';
 const themeStorageKey = 'theme';
 const themeToggleSelector = '[data-theme-toggle]';
+const mobileMenuSelector = '[data-mobile-menu]';
+const mobileMenuOpenSelector = '[data-mobile-menu-open]';
+const mobileMenuCloseSelector = '[data-mobile-menu-close]';
 const validThemes = ['light', 'dark'];
 
 const storedTheme = () => {
@@ -56,9 +59,140 @@ const initializeThemeToggle = () => {
     });
 };
 
+const initializeMobileMenu = () => {
+    const menu = document.querySelector(mobileMenuSelector);
+    const openButton = document.querySelector(mobileMenuOpenSelector);
+    const panel = menu?.querySelector('[data-mobile-menu-panel]');
+
+    if (!menu || !openButton || !panel) {
+        return;
+    }
+
+    const closeButtons = menu.querySelectorAll(mobileMenuCloseSelector);
+    const menuLinks = menu.querySelectorAll('a');
+    let closeTimeout;
+
+    const closeMenu = () => {
+        window.clearTimeout(closeTimeout);
+        openButton.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+        panel.classList.add('-translate-x-full');
+
+        closeTimeout = window.setTimeout(() => {
+            menu.hidden = true;
+        }, 300);
+    };
+
+    const openMenu = () => {
+        window.clearTimeout(closeTimeout);
+        menu.hidden = false;
+        openButton.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('overflow-hidden');
+
+        window.requestAnimationFrame(() => {
+            panel.classList.remove('-translate-x-full');
+            menu.querySelector(mobileMenuCloseSelector)?.focus();
+        });
+    };
+
+    openButton.addEventListener('click', openMenu);
+
+    closeButtons.forEach((button) => {
+        button.addEventListener('click', closeMenu);
+    });
+
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menu.hidden) {
+            closeMenu();
+            openButton.focus();
+        }
+    });
+};
+
 initializeTheme();
 
 const cookieConsentSelector = '[data-cookie-consent-banner]';
+const protectedEmailSelector = '[data-protected-email]';
+const contactFormSelector = '[data-contact-form]';
+const minimumContactFormAge = 2500;
+
+const reverse = (value) => value.split('').reverse().join('');
+
+const decodeProtectedEmail = (payload) => {
+    try {
+        const [encodedUser, encodedDomain] = window.atob(payload).split('|');
+
+        if (!encodedUser || !encodedDomain) {
+            return null;
+        }
+
+        return `${reverse(encodedUser)}@${reverse(encodedDomain)}`;
+    } catch {
+        return null;
+    }
+};
+
+const initializeProtectedEmailLinks = () => {
+    document.querySelectorAll(protectedEmailSelector).forEach((link) => {
+        const email = decodeProtectedEmail(link.dataset.protectedEmail ?? '');
+
+        if (!email) {
+            return;
+        }
+
+        link.href = `mailto:${email}`;
+
+        link.querySelector('[data-protected-email-label]')?.replaceChildren(email);
+    });
+};
+
+const showContactFormStatus = (form, message) => {
+    const status = form.querySelector('[data-contact-form-status]');
+
+    if (!status) {
+        return;
+    }
+
+    status.textContent = message;
+    status.classList.remove('hidden');
+};
+
+const initializeContactForms = () => {
+    document.querySelectorAll(contactFormSelector).forEach((form) => {
+        const startedAt = Date.now();
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const recipient = decodeProtectedEmail(form.dataset.contactRecipient ?? '');
+            const formData = new FormData(form);
+            const honeypot = String(formData.get('website') ?? '').trim();
+
+            if (honeypot !== '' || Date.now() - startedAt < minimumContactFormAge || !recipient) {
+                showContactFormStatus(form, 'No hemos podido preparar el mensaje. Escríbenos desde el enlace de email.');
+
+                return;
+            }
+
+            const name = String(formData.get('name') ?? '').trim();
+            const email = String(formData.get('email') ?? '').trim();
+            const message = String(formData.get('message') ?? '').trim();
+            const subject = encodeURIComponent(`Consulta desde la web de ${name || 'Gestico Barbanza'}`);
+            const body = encodeURIComponent([
+                `Nombre: ${name}`,
+                `Email: ${email}`,
+                '',
+                message,
+            ].join('\n'));
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+        });
+    });
+};
 
 const getStoredCookieConsent = (storageKey) => {
     try {
@@ -148,9 +282,15 @@ const initializeCookieConsent = () => {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initializeThemeToggle();
+        initializeMobileMenu();
         initializeCookieConsent();
+        initializeProtectedEmailLinks();
+        initializeContactForms();
     }, { once: true });
 } else {
     initializeThemeToggle();
+    initializeMobileMenu();
     initializeCookieConsent();
+    initializeProtectedEmailLinks();
+    initializeContactForms();
 }

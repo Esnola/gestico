@@ -3,12 +3,13 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
-Route::view('/servicios', 'pages.services')->name('services');
-Route::view('/fincas', 'pages.property')->name('property-management');
-Route::view('/asesoria', 'pages.advisory')->name('advisory');
+Route::view('/servicios', 'pages.servicios')->name('servicios');
+Route::view('/fincas', 'pages.property')->name('fincas');
+Route::view('/asesoria', 'pages.asesoria')->name('asesoria');
 Route::view('/comparativa-tipografia', 'pages.font-compare')->name('font-compare');
 Route::view('/area-clientes', 'pages.client-portal')->name('client-portal');
-Route::view('/contacto', 'pages.contact')->name('contact');
+Route::view('/contacto', 'pages.contact')->name('contacto');
+Route::view('/ubicacion', 'pages.ubicacion')->name('location');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
