@@ -202,8 +202,8 @@
       <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
         <div class="grid gap-3">
           @foreach (config('gestico.home_dos') as [$texto, $view, $icono])
-            <div class="flex items-center gap-4 rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-muted">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"  viewBox=" {{ $view ? '0 0 24 24': '0 0 384 512'}}" class="size-6">{!! $icono !!}</svg>
+            <div class="flex items-center gap-4 rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-text">
+                <svg  xmlns="http://www.w3.org/2000/svg" stroke="none"  fill="currentColor" viewBox=" {{ $view ? '0 0 24 24': '0 0 384 512'}}" class="size-8 opacity-80">{!! $icono !!}</svg>
                 {{ $texto }}</div>
           @endforeach
         </div>
