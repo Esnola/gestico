@@ -6,10 +6,10 @@
 <body class="bg-brand-cream font-gestico-sans font-light text-brand-ink-dark antialiased dark:bg-brand-night dark:text-brand-night-text">
 <div class="min-h-screen">
   <header class="sticky top-0 z-50 border-b border-white/50 bg-white/55 backdrop-blur-sm shadow-sm shadow-black/5 dark:border-white/10 dark:bg-brand-night-panel/55 dark:shadow-black/20">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
       <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Gestico Barbanza">
         <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza"
-             class="h-12 w-auto rounded-md dark:bg-transparent px-2 py-1 sm:h-14">
+             class="h-11 w-auto rounded-md px-2 py-1 dark:bg-transparent sm:h-14">
       </a>
       <!-- Links Header -->
       <x-header-links :isfooter="false"/>
@@ -61,7 +61,7 @@
 
     <div id="mobile-menu"
          data-mobile-menu
-         class="fixed inset-0 z-[9999] bg-brand-cream dark:bg-brand-night lg:hidden"
+         class="fixed inset-0 z-[9999] bg-brand-cream/95 backdrop-blur-sm dark:bg-brand-night/95 lg:hidden"
          role="dialog"
          aria-modal="true"
          aria-labelledby="mobile-menu-title"
@@ -71,7 +71,7 @@
               class="absolute inset-0 h-full w-full bg-brand-cream dark:bg-brand-night"
               aria-label="Cerrar menú"></button>
       <div data-mobile-menu-panel
-           class="absolute inset-0 flex min-h-dvh -translate-x-full flex-col border-r border-brand-border bg-brand-surface  shadow-2xl transition-transform duration-300 ease-out dark:border-brand-night-border dark:bg-brand-night-panel">
+           class="absolute inset-y-0 left-0 flex min-h-dvh w-full max-w-sm -translate-x-full flex-col border-r border-brand-border bg-brand-surface shadow-2xl transition-transform duration-300 ease-out dark:border-brand-night-border dark:bg-brand-night-panel sm:max-w-md">
         <div class="flex items-center justify-between px-5 py-5">
           <p id="mobile-menu-title"
              class="font-gestico-serif text-2xl font-semibold text-brand-ink dark:text-brand-night-text">Menú</p>
@@ -90,7 +90,7 @@
     </div>
   </header>
 
-  <main class="overflow-x-hidden">
+  <main class="overflow-x-clip">
     {{ $slot }}
   </main>
 

@@ -9,7 +9,7 @@
 
 <nav {{ $attributes->class([
     'hidden items-center gap-7 text-sm font-normal text-brand-text dark:text-brand-night-muted lg:flex' => $navigationVariant === 'desktop',
-    'grid dark:bg-brand-night text-base font-bold text-brand-text dark:bg-brand-night-panel dark:text-brand-night-muted' => $navigationVariant === 'mobile',
+    'grid gap-2 px-5 pb-5 text-base font-medium text-brand-text dark:bg-brand-night-panel dark:text-brand-night-muted' => $navigationVariant === 'mobile',
     'mt-4 grid gap-2 text-sm text-brand-frost' => $navigationVariant === 'footer',
 ]) }}>
   <x-header-link texto="Servicios" destino="servicios" :variant="$navigationVariant"/>

@@ -9,9 +9,9 @@
         consultar información de la comunidad. Por ahora mantenemos el frontend público y la estructura técnica
         lista.</p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href="{{ route('login') }}"
-           class="inline-flex justify-center rounded-md bg-brand-gold-bright px-6 py-3 text-sm font-normal text-brand-ink transition hover:bg-brand-gold-soft dark:bg-brand-night-gold dark:text-brand-night">Ir
-          al acceso</a>
+        <a href="{{ route('contacto') }}"
+           class="inline-flex justify-center rounded-md bg-brand-gold-bright px-6 py-3 text-sm font-normal text-brand-ink transition hover:bg-brand-gold-soft dark:bg-brand-night-gold dark:text-brand-night">Hablar
+          con nosotros</a>
         <a href="{{ route('contacto') }}"
            class="inline-flex justify-center rounded-md border border-white/25 px-6 py-3 text-sm font-normal text-white transition hover:bg-white/10">Consultar
           implantación</a>
