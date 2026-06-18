@@ -98,6 +98,14 @@
     --color-brand-frost: #d9e3e4;
     --color-brand-frost-strong: #d7e5e4;
     --color-brand-frost-muted: #b8c8ca;
+    --color-brand-night: #101b1d;
+    --color-brand-night-panel: #162629;
+    --color-brand-night-raised: #1d3033;
+    --color-brand-night-surface: #203538;
+    --color-brand-night-muted: #9fb1b3;
+    --color-brand-night-text: #edf4f2;
+    --color-brand-night-border: #365052;
+    --color-brand-night-gold: #e1b83d;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -114,6 +122,8 @@
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+
 }
 
 @layer theme {
@@ -121,6 +131,17 @@
         --color-accent: var(--color-white);
         --color-accent-content: var(--color-white);
         --color-accent-foreground: var(--color-neutral-800);
+
+        --color-brand-mist: var(--color-brand-night);
+        --color-brand-surface: var(--color-brand-night-surface);
+        --color-brand-border: var(--color-brand-night-border);
+        --color-brand-frost: var(--color-brand-night-muted);
+
+        --color-brand-ink-panel: var(--color-brand-night-panel);
+
+        --color-brand-gold: var(--color-brand-night-gold);
+        --color-brand-gold-bright: var(--color-brand-night-gold);
+
     }
 }
 
