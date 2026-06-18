@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 Route::view('/servicios', 'pages.services')->name('services');
-Route::view('/fincas', 'pages.property-management')->name('property-management');
+Route::view('/fincas', 'pages.property')->name('property-management');
 Route::view('/asesoria', 'pages.advisory')->name('advisory');
+Route::view('/comparativa-tipografia', 'pages.font-compare')->name('font-compare');
 Route::view('/area-clientes', 'pages.client-portal')->name('client-portal');
 Route::view('/contacto', 'pages.contact')->name('contact');
 

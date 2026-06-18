@@ -4,7 +4,7 @@
             <div class="max-w-3xl">
                 <p class="text-sm font-normal uppercase text-brand-gold dark:text-brand-night-gold">Administración de fincas y asesoría para comunidades</p>
                 <h1 class="mt-5 font-gestico-serif text-4xl font-semibold tracking-tighter text-brand-ink dark:text-brand-night-text sm:text-5xl lg:text-6xl">Tu comunidad, gestionada con cuentas claras y respuesta profesional.</h1>
-                <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-text-hero dark:text-brand-night-muted">Gestico Barbanza coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para que la presidencia y la junta tengan control sin cargar con el trabajo diario.</p>
+                <p class="mt-6 max-w-2xl text-lg leading-7 text-brand-text-hero dark:text-brand-night-muted">Gestico Barbanza coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para que la presidencia y la junta tengan control sin cargar con el trabajo diario.</p>
                 <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                     <a href="{{ route('contact') }}" class="inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 text-sm font-normal text-white shadow-sm transition hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:text-brand-night dark:hover:bg-brand-gold-bright">Solicitar una propuesta</a>
                     <a href="{{ route('services') }}" class="inline-flex items-center justify-center rounded-md border border-brand-stone bg-white/70 px-6 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver servicios</a>
@@ -201,7 +201,7 @@
             <div>
                 <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Área de clientes</p>
                 <h2 class="mt-3 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">La información privada llegará en la siguiente fase.</h2>
-                <p class="mt-5 text-lg leading-8 text-brand-text-muted dark:text-brand-night-muted">Dejamos preparada la puerta de acceso para que presidentes, juntas y propietarios puedan consultar documentación, movimientos, informes y comunicaciones cuando construyamos la zona privada.</p>
+                <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Dejamos preparada la puerta de acceso para que presidentes, juntas y propietarios puedan consultar documentación, movimientos, informes y comunicaciones cuando construyamos la zona privada.</p>
                 <a href="{{ route('client-portal') }}" class="mt-7 inline-flex rounded-md border border-brand-stone bg-white px-5 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver planteamiento del portal</a>
             </div>
             <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">

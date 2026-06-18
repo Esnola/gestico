@@ -9,7 +9,7 @@
             <header class="sticky top-0 z-50 border-b border-white/50 bg-white/55 backdrop-blur-sm shadow-sm shadow-black/5 dark:border-white/10 dark:bg-brand-night-panel/55 dark:shadow-black/20">
                 <div class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 sm:px-6 lg:px-8">
                     <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Gestico Barbanza">
-                        <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza" class="h-12 w-auto rounded-md bg-white/90 dark:bg-transparent px-2 py-1 sm:h-14">
+                        <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza" class="h-12 w-auto rounded-md dark:bg-transparent px-2 py-1 sm:h-14">
                     </a>
 
                     <nav class="hidden items-center gap-7 text-sm font-normal text-brand-text dark:text-brand-night-muted lg:flex">

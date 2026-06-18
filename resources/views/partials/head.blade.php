@@ -16,6 +16,7 @@
 <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}?v={{ $faviconVersion }}">
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+@stack('head')
 <script>
     try {
         if (! ['light', 'dark'].includes(window.localStorage.getItem('flux.appearance'))) {

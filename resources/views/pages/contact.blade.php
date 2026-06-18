@@ -4,7 +4,7 @@
             <div>
                 <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Contacto</p>
                 <h1 class="mt-4 font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">Cuéntanos qué necesita tu comunidad.</h1>
-                <p class="mt-6 text-lg leading-8 text-brand-text-muted dark:text-brand-night-muted">Prepararemos una propuesta ajustada al tamaño de la comunidad, situación económica, volumen de incidencias y necesidades de asesoría.</p>
+                <p class="mt-6 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Prepararemos una propuesta ajustada al tamaño de la comunidad, situación económica, volumen de incidencias y necesidades de asesoría.</p>
                 <div class="mt-8 grid gap-3 text-sm font-normal text-brand-text dark:text-brand-night-muted">
                     <a href="mailto:{{ config('gestico.email') }}" class="rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold">{{ config('gestico.email') }}</a>
                     <a href="tel:{{ config('gestico.phone_href') }}" class="rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold">{{ config('gestico.phone') }}</a>
