@@ -35,11 +35,14 @@
           </div>
         </div>
       </div>
+
+    <!--! CARDS ANIMADAS INICIO -->
+        <!--? CARD UNO -->
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-        <div class="home-slide-image home-slide-image-right overflow-hidden rounded-2xl border border-brand-border bg-white p-3 shadow-xl shadow-brand-teal-shadow/10 dark:border-brand-night-border dark:bg-brand-night-panel lg:translate-x-6">
-          <div class="aspect-[4/3] overflow-hidden rounded-xl">
+        <div class="home-slide-image home-slide-image-right overflow-hidden rounded-2xl border border-brand-border p- bg-brand-surface shadow-xl shadow-brand-teal-shadow/10 dark:border-brand-night-border dark:bg-brand-night-panel lg:translate-x-6">
+          <div class=" overflow-hidden rounded-xl">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" class="h-full w-full">
-              <rect width="720" height="480" rx="28" fill="var(--color-brand-surface)"/>
+              <rect width="100%" height="100%" rx="28" fill="var(--color-brand-surface)"/>
               <rect x="88" y="92" width="236" height="296" rx="16"
                     fill="var(--color-brand-surface)"
                     stroke="var(--color-brand-border)"
@@ -86,8 +89,9 @@
           </div>
         </div>
 
+          <!--? CARD DOS -->
         <div class="home-slide-image home-slide-image-left overflow-hidden rounded-2xl border border-brand-border bg-white p-3 shadow-xl shadow-brand-teal-shadow/10 dark:border-brand-night-border dark:bg-brand-night-panel lg:translate-y-8 lg:-ml-8">
-          <div class="aspect-[4/3] overflow-hidden rounded-xl">
+          <div class="overflow-hidden rounded-xl">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" class="h-full w-full">
               <rect width="720" height="480" rx="28" fill="var(--color-brand-surface)"/>
               <rect x="64" y="86" width="360" height="250" rx="18"
@@ -138,6 +142,8 @@
           </div>
         </div>
       </div>
+    <!--! CARDS ANIMADAS FIN -->
+
     </div>
   </section>
 

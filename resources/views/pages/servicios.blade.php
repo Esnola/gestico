@@ -1,5 +1,5 @@
 <x-layouts.public title="Servicios">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20">
+  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
         Servicios</p>
@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
@@ -30,10 +30,11 @@
           servicio cercano, organizado y útil para vecinos y propietarios.</p>
       </div>
 
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-gsap-stagger>
         @foreach ( config('gestico.servicios') as [$icon, $title, $text])
           <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <div class="inline-flex size-11 items-center justify-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold">
               <x-service-icon :type="$icon"/>
             </div>
@@ -45,12 +46,13 @@
     </div>
   </section>
 
-  <section class="bg-brand-cream py-16 dark:bg-brand-night">
+  <section class="bg-brand-cream py-16 dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
-      <div class="grid gap-4 sm:grid-cols-2 ">
+      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
         @foreach (config('gestico.servicios_normativa') as [$step, $title, $text])
           <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step }}</p>
             <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
             <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
@@ -70,7 +72,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Cómo
@@ -82,10 +84,11 @@
           de mensajes sueltos ni de decisiones improvisadas.</p>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
         @foreach (config('gestico.servicios_trabajo') as [$step, $title, $text])
           <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step }}</p>
             <h3 class="mt-3 font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
             <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
@@ -95,7 +98,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night">
+  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">Más

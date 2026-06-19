@@ -1,5 +1,5 @@
 <x-layouts.public title="Administración de fincas">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20">
+  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
         Administración de fincas</p>
@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
@@ -27,26 +27,27 @@
         <p class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted">La administración de fincas no es
           solo tramitar papeles. También es interpretar los acuerdos de la junta, coordinar proveedores, avisar a tiempo
           de los plazos y mantener una relación clara entre vecinos, presidencia y comunidad.</p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="mt-8 grid gap-4 sm:grid-cols-2" data-gsap-stagger>
           @foreach ([
               'Convocatorias y actas',
               'Control de cuotas',
               'Atención a incidencias',
               'Seguimiento de obras',
           ] as $item)
-            <div class="rounded-md border border-brand-border-warm bg-white px-4 py-4 font-gestico-serif text-lg font-semibold text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">{{ $item }}</div>
+            <div class="rounded-md border border-brand-border-warm bg-white px-4 py-4 font-gestico-serif text-lg font-semibold text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text" data-gsap-stagger-item>{{ $item }}</div>
           @endforeach
         </div>
       </div>
 
-      <div class="grid gap-5">
+      <div class="grid gap-5" data-gsap-stagger>
         @foreach ([
             ['clipboard', 'Juntas y acuerdos', 'Preparamos la parte formal y dejamos constancia de lo aprobado para que nada quede ambiguo.'],
             ['wallet', 'Economía de la comunidad', 'Revisamos cuentas, remesas, previsiones y pagos para que los números sean entendibles.'],
             ['wrench', 'Mantenimiento e incidencias', 'Damos cauce a reparaciones, presupuestos y urgencias con un seguimiento continuo.'],
         ] as [$icon, $title, $text])
           <article
-                  class="rounded-md border border-brand-border bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <div class="inline-flex size-11 items-center justify-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold">
               <x-service-icon :type="$icon"/>
             </div>
@@ -58,7 +59,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-cream py-16 dark:bg-brand-night">
+  <section class="bg-brand-cream py-16 dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
@@ -70,7 +71,7 @@
           un vecino que necesita respuestas o una junta que exige claridad y orden.</p>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
         @foreach ([
             ['01', 'Vecino moroso', 'Seguimiento de cuotas pendientes y preparación del expediente si hay que reclamar.'],
             ['02', 'Obras y derramas', 'Control de presupuestos, aprobaciones y ejecución para evitar desviaciones.'],
@@ -78,7 +79,8 @@
             ['04', 'Documentación dispersa', 'Ordenamos contratos, actas, facturas y comunicaciones para que todo esté accesible.'],
         ] as [$step, $title, $text])
           <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step }}</p>
             <h3 class="mt-3 font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
             <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
@@ -88,7 +90,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Gestión
@@ -100,10 +102,11 @@
           explicarse con contexto y documentación.</p>
       </div>
 
-      <div class="grid gap-4">
+      <div class="grid gap-4" data-gsap-stagger>
         @foreach (config('gestico.administracion') as $item)
           <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $item['title'] }}</h3>
             <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $item['text'] }}</p>
           </article>
@@ -112,7 +115,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night">
+  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">

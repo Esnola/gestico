@@ -13,20 +13,7 @@
       </a>
       <!-- Links Header -->
       <x-header-links :isfooter="false"/>
-      <!-- Links conexión -->
-      {{--      <div class="flex items-center gap-2">
-              @auth
-                <a href="{{ url('/dashboard') }}"
-                   class="hidden rounded-md border border-brand-gold-border/35 px-4 py-2 text-sm font-normal text-brand-gold-text transition hover:border-brand-gold-border hover:bg-white dark:border-brand-night-border dark:text-brand-night-gold dark:hover:border-brand-night-gold dark:hover:bg-brand-night-raised sm:inline-flex">Panel</a>
-              @else
-                <a href="{{ route('login') }}"
-                   class="hidden rounded-md border border-brand-gold-border/35 px-4 py-2 text-sm font-normal text-brand-gold-text transition hover:border-brand-gold-border hover:bg-white dark:border-brand-night-border dark:text-brand-night-gold dark:hover:border-brand-night-gold dark:hover:bg-brand-night-raised sm:inline-flex">Acceso
-                  clientes</a>
-              @endauth
-              <a href="{{ route('contacto') }}"
-                 class="rounded-md bg-brand-gold px-4 py-2 text-sm font-normal text-white shadow-sm transition hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:text-brand-night dark:hover:bg-brand-gold-bright">Solicitar
-                propuesta</a>
-            </div>--}}
+
       <div class="flex items-center gap-2">
         <button type="button"
                 data-theme-toggle
@@ -61,7 +48,7 @@
 
     <div id="mobile-menu"
          data-mobile-menu
-         class="fixed inset-0 z-[9999] bg-brand-cream/95 backdrop-blur-sm dark:bg-brand-night/95 lg:hidden"
+         class="fixed inset-0 z-100 bg-brand-cream/95 backdrop-blur-sm dark:bg-brand-night/95 lg:hidden"
          role="dialog"
          aria-modal="true"
          aria-labelledby="mobile-menu-title"
@@ -90,7 +77,7 @@
     </div>
   </header>
 
-  <main class="overflow-x-clip">
+  <main class="overflow-x-clip" data-gsap-page>
     {{ $slot }}
   </main>
 

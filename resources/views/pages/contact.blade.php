@@ -1,5 +1,5 @@
 <x-layouts.public title="Contacto">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20">
+  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
@@ -8,11 +8,13 @@
           Cuéntanos qué necesita tu comunidad.</h1>
         <p class="mt-6 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Prepararemos una propuesta
           ajustada al tamaño de la comunidad, situación económica, volumen de incidencias y necesidades de asesoría.</p>
-        <div class="mt-8 grid gap-3 text-sm font-normal text-brand-text dark:text-brand-night-muted">
+        <div class="mt-8 grid gap-3 text-sm font-normal text-brand-text dark:text-brand-night-muted" data-gsap-stagger>
           <x-protected-email-link
-                  class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold"/>
+                  class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold"
+                  data-gsap-stagger-item/>
           <a href="tel:{{ config('gestico.phone_href') }}"
-             class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold">
+             class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold"
+             data-gsap-stagger-item>
             <x-aux-icon type="phone"/>
             <span>{{ config('gestico.phone') }}</span>
           </a>
@@ -62,7 +64,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Para
@@ -74,10 +76,11 @@
           la documentación, las incidencias abiertas y las obligaciones económicas o laborales.</p>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
         @foreach (config('gestico.contact') as $item)
           <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $item['title'] }}</h3>
             <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $item['text'] }}</p>
           </article>

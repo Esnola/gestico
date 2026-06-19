@@ -1,5 +1,5 @@
 <x-layouts.public title="Asesoría económico-financiera, fiscal y laboral">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20">
+  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Asesoría</p>
       <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">
@@ -16,7 +16,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel">
+  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
@@ -28,10 +28,11 @@
           fiables y sin depender de hojas sueltas o explicaciones improvisadas.</p>
       </div>
 
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4" data-gsap-stagger>
         @foreach (config('gestico.asesoria') as [$icon, $title, $text])
           <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <div class="inline-flex size-11 items-center justify-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold">
               <x-service-icon :type="$icon"/>
             </div>
@@ -43,7 +44,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-cream py-16 dark:bg-brand-night">
+  <section class="bg-brand-cream py-16 dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Cómo
@@ -55,10 +56,11 @@
           soporte y dejamos el expediente listo para consulta, revisión o junta.</p>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
         @foreach (config('gestico.asesoria_dos') as [$step, $title, $text])
           <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
+                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+                  data-gsap-stagger-item>
             <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step}}</p>
             {{--                        <div class="mt-3 inline-flex size-10 items-center justify-center rounded-md border border-brand-border-warm bg-brand-surface text-brand-gold dark:border-brand-night-border dark:bg-brand-night-panel dark:text-brand-night-gold">
                                         <x-service-icon :type="$icon" />
@@ -71,7 +73,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night">
+  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">
