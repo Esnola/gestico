@@ -1,13 +1,12 @@
 const mobileMenuSelector = '[data-mobile-menu]';
 const mobileMenuOpenSelector = '[data-mobile-menu-open]';
 const mobileMenuCloseSelector = '[data-mobile-menu-close]';
-
 export const initializeMobileMenu = () => {
     const menu = document.querySelector(mobileMenuSelector);
     const openButton = document.querySelector(mobileMenuOpenSelector);
-    const panel = menu?.querySelector('[data-mobile-menu-panel]');
+    const panel = menu ? menu.querySelector('[data-mobile-menu-panel]') : undefined;
 
-    if (!menu || !openButton || !panel) {
+    if (!menu || !openButton || !panel ) {
         return;
     }
 

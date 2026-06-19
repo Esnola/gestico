@@ -1,3 +1,4 @@
+
 <x-layouts.public title="Gestión integral de comunidades">
   <section class="relative overflow-hidden bg-brand-mist dark:bg-brand-night">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:items-center lg:px-8 lg:py-20">
@@ -7,17 +8,20 @@
         <h1 data-typewriter
             class="mt-5 font-gestico-serif text-4xl font-semibold tracking-tighter text-brand-ink dark:text-brand-night-text sm:text-5xl lg:text-6xl">
           Tu comunidad, gestionada con cuentas claras y respuesta profesional.</h1>
-        <p data-animated-paragraph
+
+          <div class="mt-8 flex flex-col gap-3 ">
+        <p animated-paragraph
            class="mt-6 max-w-2xl text-lg leading-7 text-brand-text-hero dark:text-brand-night-muted">Gestico Barbanza
           coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para
           que la presidencia y la junta tengan control sin cargar con el trabajo diario.</p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="{{ route('contacto') }}"
-             class="inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 text-sm font-normal text-white shadow-sm transition hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:text-brand-night dark:hover:bg-brand-gold-bright">Solicitar
-            una propuesta</a>
-          <a href="{{ route('servicios') }}"
-             class="inline-flex items-center justify-center rounded-md border border-brand-stone bg-white/70 px-6 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver
-            servicios</a>
+              <div class="flex items-center justify-center gap-6">
+                  <a href="{{ route('contacto') }}"
+                     class="inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 text-sm font-normal text-white shadow-sm transition hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:text-brand-night dark:hover:bg-brand-gold-bright">Solicitar
+                      una propuesta</a>
+                  <a href="{{ route('servicios') }}"
+                     class="inline-flex items-center justify-center rounded-md border border-brand-stone bg-white/70 px-6 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver
+                      servicios</a>
+              </div>
         </div>
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel">
@@ -53,7 +57,7 @@
             <rect x="218" y="136" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
             <rect x="132" y="222" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
             <rect x="218" y="222" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
-            <path d="M113 388h242"
+            <path d="M113 388h242" data-inicio-svg-accent
                   stroke="var(--color-brand-gold)"
                   stroke-width="16"
                   stroke-linecap="round"/>
@@ -65,19 +69,19 @@
                   fill="var(--color-brand-surface)" opacity=".85"/>
             <rect x="434" y="268" width="138" height="30" rx="8"
                   fill="var(--color-brand-surface)" opacity=".75"/>
-            <circle cx="450" cy="350" r="22"
+            <circle cx="450" cy="350" r="22" data-inicio-svg-accent
                     fill="var(--color-brand-gold-bright)"/>
-            <path d="M484 350h75m-26 0v27m26-27v20"
+            <path d="M484 350h75m-26 0v27m26-27v20" data-inicio-svg-draw
                   stroke="var(--color-brand-gold-bright)"
                   stroke-width="12"
                   stroke-linecap="round"/>
-            <path d="M78 92l128-62 128 62"
+            <path d="M78 92l128-62 128 62" data-inicio-svg-draw
                   fill="none"
                   stroke="var(--color-brand-gold)"
                   stroke-width="12"
                   stroke-linecap="round"
                   stroke-linejoin="round"/>
-            <path d="M392 89c41-31 120-25 158 20"
+            <path d="M392 89c41-31 120-25 158 20" data-inicio-svg-accent
                   fill="none"
                   stroke="var(--color-brand-gold)"
                   stroke-width="4"
@@ -99,41 +103,26 @@
                   fill="var(--color-brand-surface)"
                   stroke="var(--color-brand-border)"
                   stroke-width="3"/>
-            <path d="M91 132h126M91 166h216M91 200h188M91 234h236"
+            <path d="M91 132h126M91 166h216M91 200h188M91 234h236" data-inicio-svg-draw
                   stroke="var(--color-brand-text)"
                   stroke-width="14"
                   stroke-linecap="round"
                   opacity=".22"/>
-            <path d="M91 290h138"
+            <path d="M91 290h138" data-inicio-svg-accent
                   stroke="var(--color-brand-gold)"
                   stroke-width="18"
                   stroke-linecap="round"/>
             <rect x="444" y="118" width="188" height="250" rx="20"
                   fill="var(--color-brand-ink-panel)"/>
-            <path d="M484 296V238M528 296V196M572 296V158"
+            <path d="M484 296V238M528 296V196M572 296V158" data-inicio-svg-draw
                   stroke="var(--color-brand-gold-bright)"
                   stroke-width="22"
                   stroke-linecap="round"/>
-            <path d="M484 322h98"
+            <path d="M484 322h98" data-inicio-svg-accent
                   stroke="var(--color-brand-mist)"
                   stroke-width="8"
                   stroke-linecap="round"
                   opacity=".45"/>
-            <circle cx="122" cy="374" r="28"
-                    fill="var(--color-brand-gold-bright)"/>
-            <circle cx="174" cy="374" r="18"
-                    fill="none"
-                    stroke="var(--color-brand-gold)"
-                    stroke-width="12"/>
-            <path d="M191 374h64m-24 0v25m24-25v19"
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="12"
-                  stroke-linecap="round"/>
-            <path d="M438 86c39-28 112-20 148 25"
-                  fill="none"
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="4"
-                  opacity=".28"/>
             <path d="M68 406c108 30 238 30 334 0"
                   fill="none"
                   stroke="var(--color-brand-ink-panel)"
@@ -214,3 +203,5 @@
     </div>
   </section>
 </x-layouts.public>
+
+@vite('resources/js/home-gsap.js')

@@ -18,17 +18,7 @@
   <meta name="description"
         content="{{ $description ?? 'Gestico Barbanza gestiona comunidades de propietarios, administración de fincas y asesoría económico-financiera, fiscal y laboral.' }}">
 
-
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @stack('head')
-  <script>
-      try {
-          if (!['light', 'dark'].includes(window.localStorage.getItem('flux.appearance'))) {
-              window.localStorage.setItem('flux.appearance', 'light');
-          }
-      } catch {
-          //
-      }
-  </script>
   @fluxAppearance
 </head>

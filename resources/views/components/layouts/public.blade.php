@@ -48,18 +48,14 @@
 
     <div id="mobile-menu"
          data-mobile-menu
-         class="fixed inset-0 z-100 bg-brand-cream/95 backdrop-blur-sm dark:bg-brand-night/95 lg:hidden"
+         class="fixed inset-0 z-60 lg:hidden"
          role="dialog"
          aria-modal="true"
          aria-labelledby="mobile-menu-title"
          hidden>
-      <button type="button"
-              data-mobile-menu-close
-              class="absolute inset-0 h-full w-full bg-brand-cream dark:bg-brand-night"
-              aria-label="Cerrar menú"></button>
       <div data-mobile-menu-panel
-           class="absolute inset-y-0 left-0 flex min-h-dvh w-full max-w-sm -translate-x-full flex-col border-r border-brand-border bg-brand-surface shadow-2xl transition-transform duration-300 ease-out dark:border-brand-night-border dark:bg-brand-night-panel sm:max-w-md">
-        <div class="flex items-center justify-between px-5 py-5">
+           class="absolute inset-y-0 left-0 z-10 flex min-h-dvh w-full  -translate-x-full flex-col border-r border-brand-border bg-brand-surface shadow-2xl transition-transform duration-300 ease-out dark:border-brand-night-border dark:bg-brand-night-panel">
+        <div class="flex items-center justify-between px-5 py-5 max-">
           <p id="mobile-menu-title"
              class="font-gestico-serif text-2xl font-semibold text-brand-ink dark:text-brand-night-text">Menú</p>
           <button type="button"
