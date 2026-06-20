@@ -67,7 +67,7 @@
         ];
     @endphp
 
-    <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
+    <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24" data-gsap-reveal>
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Comparativa tipográfica</p>
             <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">Tres sans-serif para decidir cuál acompaña mejor los titulares de Gestico.</h1>
@@ -80,7 +80,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
+    <section class="bg-white py-20 dark:bg-brand-night-panel sm:py-24" data-gsap-reveal>
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div class="grid gap-5 lg:grid-cols-3" data-gsap-stagger>
                 @foreach ($fonts as $font)
@@ -122,7 +122,7 @@
         </div>
     </section>
 
-    <section class="bg-brand-cream py-16 dark:bg-brand-night">
+    <section class="bg-brand-cream py-20 dark:bg-brand-night sm:py-24">
         <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
             <div>
                 <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Recomendación</p>

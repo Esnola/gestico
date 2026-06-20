@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 Route::view('/servicios', 'pages.servicios')->name('servicios');
-Route::view('/fincas', 'pages.property')->name('fincas');
+Route::view('/fincas', 'pages.fincas')->name('fincas');
 Route::view('/asesoria', 'pages.asesoria')->name('asesoria');
 Route::view('/comparativa-tipografia', 'pages.font-compare')->name('font-compare');
 Route::view('/area-clientes', 'pages.client-portal')->name('client-portal');

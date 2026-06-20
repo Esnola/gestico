@@ -17,15 +17,12 @@ const getShapeLength = (shape) => {
     }
 };
 
-const animateGroupWhenVisible = (elements, animation, reset) => {
+const animateGroupWhenVisible = (elements, animation) => {
     if (!elements.length) {
         return;
     }
 
     const trigger = elements[0].parentElement ?? elements[0];
-    let isVisible = false;
-
-    reset();
 
     if (!('IntersectionObserver' in window)) {
         animation();
@@ -35,23 +32,12 @@ const animateGroupWhenVisible = (elements, animation, reset) => {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                if (isVisible) {
-                    return;
-                }
-
-                isVisible = true;
-                animation();
-
+            if (!entry.isIntersecting) {
                 return;
             }
 
-            if (!isVisible) {
-                return;
-            }
-
-            isVisible = false;
-            reset();
+            observer.unobserve(entry.target);
+            animation();
         });
     }, {
         rootMargin: '0px 0px -14% 0px',
@@ -129,41 +115,6 @@ export const initializeInicioCardSvgAnimations = () => {
     const motionTargets = illustrations.flatMap(({motionTargets}) => motionTargets);
     const drawTargets = illustrations.flatMap(({drawTargets}) => drawTargets);
     const accentTargets = illustrations.flatMap(({accentTargets}) => accentTargets);
-    const backgroundShapes = illustrations.map(({backgroundShape}) => backgroundShape).filter(Boolean);
-
-    const resetIllustrations = () => {
-        gsap.killTweensOf([...svgs, ...motionTargets, ...drawTargets, ...accentTargets, ...backgroundShapes]);
-
-        gsap.set(svgs, {
-            autoAlpha: 0,
-            rotate: (index) => (index % 2 === 0 ? -1.5 : 1.5),
-            scale: 0.975,
-            transformOrigin: '50% 50%',
-            y: (index) => (index % 2 === 0 ? 8 : -8),
-        });
-
-        gsap.set(backgroundShapes, {
-            autoAlpha: 1,
-        });
-
-        gsap.set(motionTargets, {
-            autoAlpha: 0,
-            scale: 0.94,
-            y: 10,
-        });
-
-        gsap.set(drawTargets, {
-            autoAlpha: 0,
-            strokeDasharray: (index, target) => getShapeLength(target),
-            strokeDashoffset: (index, target) => getShapeLength(target),
-        });
-
-        gsap.set(accentTargets, {
-            autoAlpha: 0,
-            scale: 0.82,
-            transformOrigin: '50% 50%',
-        });
-    };
 
     const animateIllustrations = () => {
         const timeline = gsap.timeline({
@@ -210,33 +161,32 @@ export const initializeInicioCardSvgAnimations = () => {
                     }
 
                     gsap.to(localAccentTargets, {
-                        duration: 2.8,
-                        ease: 'sine.inOut',
-                        repeat: -1,
-                        rotate: (targetIndex) => (targetIndex % 2 === 0 ? -2 : 2),
-                        scale: 1.015,
+                        duration: 0.58,
+                        ease: 'power2.out',
+                        rotate: 0,
+                        scale: 1,
                         stagger: {
-                            each: 0.12,
+                            amount: 0.24,
                             from: 'random',
                         },
                         transformOrigin: '50% 50%',
-                        y: (targetIndex) => (targetIndex % 2 === 0 ? -2 : 2),
-                        yoyo: true,
+                        y: 0,
                     });
                 }, offset + 0.42)
                 .add(() => {
                     gsap.to(svg, {
-                        duration: 4,
+                        duration: 0.9,
                         ease: 'sine.inOut',
-                        repeat: -1,
                         y: idleOffset,
-                        yoyo: true,
                     });
                 }, offset + 0.48);
         });
     };
 
-    animateGroupWhenVisible(illustrations.map(({card}) => card), animateIllustrations, resetIllustrations);
+    animateGroupWhenVisible(illustrations.map(({card}) => card), () => {
+        gsap.killTweensOf([...svgs, ...motionTargets, ...drawTargets, ...accentTargets]);
+        animateIllustrations();
+    });
 };
 
 if (typeof document !== 'undefined') {

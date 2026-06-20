@@ -1,5 +1,5 @@
 <x-layouts.public title="Contacto">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
+  <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
@@ -64,28 +64,17 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
-    <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Para
-          orientar la propuesta</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Cuanta más realidad veamos al inicio, mejor podremos ajustar la gestión.</h2>
-        <p class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted">No todas las comunidades necesitan
-          el mismo nivel de acompañamiento. Antes de proponer, conviene entender el volumen de viviendas, el estado de
-          la documentación, las incidencias abiertas y las obligaciones económicas o laborales.</p>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
-        @foreach (config('gestico.contact') as $item)
-          <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $item['title'] }}</h3>
-            <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $item['text'] }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
+  <x-sections.features
+      data-gsap-reveal
+      section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
+      container-class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
+      grid-class="mt-10 grid gap-4 sm:grid-cols-2"
+      card-class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Para orientar la propuesta"
+      title="Cuanta más realidad veamos al inicio, mejor podremos ajustar la gestión."
+      text="No todas las comunidades necesitan el mismo nivel de acompañamiento. Antes de proponer, conviene entender el volumen de viviendas, el estado de la documentación, las incidencias abiertas y las obligaciones económicas o laborales."
+      :items="config('gestico.contact')"
+  />
 </x-layouts.public>

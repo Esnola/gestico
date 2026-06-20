@@ -1,79 +1,87 @@
 <x-layouts.public title="Asesoría económico-financiera, fiscal y laboral">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-      <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Asesoría</p>
-      <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">
-        Cuentas, impuestos y obligaciones laborales con una lectura clara.</h1>
-      <p class="mt-6 max-w-3xl text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">La parte económica
-        de una comunidad no solo exige cumplir plazos. También requiere criterio para interpretar gastos, anticipar
-        desviaciones y explicar cada movimiento con lenguaje comprensible para la junta.</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Contabilidad</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Fiscalidad</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Laboral</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Previsión y control</span>
-      </div>
-    </div>
-  </section>
+  <x-sections.hero
+      eyebrow="Asesoría"
+      title="Cuentas, impuestos y obligaciones laborales con una lectura clara."
+      intro="La parte económica de una comunidad no solo exige cumplir plazos. También requiere criterio para interpretar gastos, anticipar desviaciones y explicar cada movimiento con lenguaje comprensible para la junta."
+      :badges="[
+          ['label' => 'Contabilidad', 'icon' => 'calculator'],
+          ['label' => 'Fiscalidad', 'icon' => 'file-check'],
+          ['label' => 'Laboral', 'icon' => 'shield-check'],
+          ['label' => 'Previsión y control', 'icon' => 'chart-line'],
+      ]"
+      {{--section-class=""--}}
+      primary-cta-label="Pedir asesoría"
+      :primary-cta-href="route('contacto')"
+      secondary-cta-label="Ver servicios"
+      :secondary-cta-href="route('servicios')"
+  >
+      <x-slot:art>
+          <div class="relative">
+              <div class="absolute -inset-4 rounded-4xl bg-brand-gold/10 blur-xl dark:bg-brand-night-gold/10"></div>
+              <div class="relative rounded-2xl border border-brand-border bg-white/85 p-6 shadow-sm shadow-black/5 backdrop-blur dark:border-brand-night-border dark:bg-brand-night-raised/90">
+                  <div class="flex items-center justify-between">
+                      <div>
+                          <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
+                              Vista rápida
+                          </p>
+                          <h2 class="mt-2 font-gestico-serif text-2xl font-semibold text-brand-ink dark:text-brand-night-text">
+                              Control económico con contexto
+                          </h2>
+                      </div>
+                      <span class="rounded-full border border-brand-border-warm bg-brand-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-brand-gold dark:border-brand-night-border dark:bg-brand-night-panel dark:text-brand-night-gold">
+                          Orden
+                      </span>
+                  </div>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
-          cubrimos</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          La asesoría funciona mejor cuando la información económica no llega tarde ni fragmentada.</h2>
-        <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Integramos contabilidad,
-          fiscalidad y gestión laboral en un mismo circuito para que la comunidad pueda tomar decisiones con datos
-          fiables y sin depender de hojas sueltas o explicaciones improvisadas.</p>
-      </div>
+                  <div class="mt-6 grid gap-3">
+                      <div class="rounded-xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                          <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">Cierres</p>
+                          <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">Mensual y trimestral</p>
+                          <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">Movimientos revisados para que la junta vea el estado real de la comunidad.</p>
+                      </div>
+                      <div class="rounded-xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                          <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">Plazos</p>
+                          <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">Modelos y obligaciones</p>
+                          <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">Calendario fiscal y laboral preparado con margen para actuar antes de que venza.</p>
+                      </div>
+                      <div class="rounded-xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                          <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">Soporte</p>
+                          <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">Expediente y explicación</p>
+                          <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">Documentos ordenados para que cada decisión pueda justificarse con facilidad.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </x-slot:art>
+  </x-sections.hero>
 
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4" data-gsap-stagger>
-        @foreach (config('gestico.asesoria') as [$icon, $title, $text])
-          <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <div class="inline-flex size-11 items-center justify-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold">
-              <x-service-icon :type="$icon"/>
-            </div>
-            <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
-            <p class="mt-4 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
+  <x-sections.features
+      section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
+      container-class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
+      grid-class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
+      card-class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-4 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Qué cubrimos"
+      title="La asesoría funciona mejor cuando la información económica no llega tarde ni fragmentada."
+      text="Integramos contabilidad, fiscalidad y gestión laboral en un mismo circuito para que la comunidad pueda tomar decisiones con datos fiables y sin depender de hojas sueltas o explicaciones improvisadas."
+      :items="config('gestico.asesoria-cubrimos')"
+  />
 
-  <section class="bg-brand-cream py-16 dark:bg-brand-night" data-gsap-reveal>
-    <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8">
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Cómo
-          trabajamos</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Un circuito económico sencillo para que cada decisión tenga contexto y respaldo.</h2>
-        <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">La asesoría aporta más valor
-          cuando no se limita a presentar obligaciones. Revisamos el movimiento económico, ordenamos la documentación de
-          soporte y dejamos el expediente listo para consulta, revisión o junta.</p>
-      </div>
+  <x-sections.steps
+      section-class="bg-brand-cream py-20 sm:py-24 dark:bg-brand-night"
+      container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8"
+      grid-class="grid gap-4 sm:grid-cols-2"
+      card-class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Cómo trabajamos"
+      title="Un circuito económico sencillo para que cada decisión tenga contexto y respaldo."
+      text="La asesoría aporta más valor cuando no se limita a presentar obligaciones. Revisamos el movimiento económico, ordenamos la documentación de soporte y dejamos el expediente listo para consulta, revisión o junta."
+      :items="config('gestico.asesoria-trabajamos')"
+  />
 
-      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
-        @foreach (config('gestico.asesoria_dos') as [$step, $title, $text])
-          <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step}}</p>
-            {{--                        <div class="mt-3 inline-flex size-10 items-center justify-center rounded-md border border-brand-border-warm bg-brand-surface text-brand-gold dark:border-brand-night-border dark:bg-brand-night-panel dark:text-brand-night-gold">
-                                        <x-service-icon :type="$icon" />
-                                    </div>--}}
-            <h3 class="mt-3 font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
-            <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night" data-gsap-reveal>
+  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" >
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">
@@ -98,3 +106,6 @@
     </div>
   </section>
 </x-layouts.public>
+
+
+@vite('resources/js/home-gsap.js')

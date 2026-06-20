@@ -1,5 +1,5 @@
 <x-layouts.public title="Ubicación">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
+  <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
+  <section class="bg-white py-20 dark:bg-brand-night-panel sm:py-24" data-gsap-reveal>
     <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.7fr_1.3fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Mapa</p>

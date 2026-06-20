@@ -1,104 +1,117 @@
 <x-layouts.public title="Servicios">
-  <section class="bg-brand-mist py-16 dark:bg-brand-night sm:py-20" data-gsap-reveal>
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-      <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
-        Servicios</p>
-      <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">
-        Gestión con visión práctica, control económico y respuesta ágil.</h1>
-      <p class="mt-6 max-w-3xl text-lg leading-6 text-brand-text-muted dark:text-brand-night-muted">Acompañamos a
-        comunidades de propietarios, presidentes y juntas con una gestión clara, ordenada y pensada para resolver el día
-        a día sin perder de vista el largo plazo.</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Gestión económica</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Juntas y actas</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Incidencias y mantenimiento</span>
-        <span class="rounded-md border border-brand-border-warm bg-white px-4 py-2 text-sm text-brand-text-strong dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text">Documentación transparente</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
-          hacemos</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Servicios diseñados para que la comunidad funcione con menos ruido y más control.</h2>
-        <p class="mt-5 text-lg  text-brand-text-muted dark:text-brand-night-muted">La Ley de Propiedad Horizontal sitúa
-          al administrador como una figura clave para velar por el régimen de la propiedad, preparar presupuestos,
-          atender reparaciones urgentes, ejecutar acuerdos y custodiar la documentación. Sobre esa base construimos un
-          servicio cercano, organizado y útil para vecinos y propietarios.</p>
-      </div>
-
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-gsap-stagger>
-        @foreach ( config('gestico.servicios') as [$icon, $title, $text])
-          <article
-                  class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <div class="inline-flex size-11 items-center justify-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold">
-              <x-service-icon :type="$icon"/>
+    <x-sections.hero
+        eyebrow="Servicios"
+        title="Gestión con visión práctica, control económico y respuesta ágil."
+        intro="Acompañamos a comunidades de propietarios, presidentes y juntas con una gestión clara, ordenada y pensada para resolver el día a día sin perder de vista el largo plazo."
+        :badges="[
+            ['label' => 'Gestión económica', 'icon' => 'coins'],
+            ['label' => 'Juntas y actas', 'icon' => 'clipboard-list'],
+            ['label' => 'Incidencias y mantenimiento', 'icon' => 'house'],
+            ['label' => 'Documentación transparente', 'icon' => 'file-lines'],
+        ]"
+        {{--section-class=""--}}
+        primary-cta-label="Pedir información"
+        :primary-cta-href="route('contacto')"
+        secondary-cta-label="Ver administración de fincas"
+        :secondary-cta-href="route('fincas')"
+    >
+        <x-slot:art>
+            <div class="relative lg:mr-8">
+                <div class="absolute -inset-6 rounded-4xl bg-brand-gold/10 blur-3xl dark:bg-brand-night-gold/10"></div>
+                <div class="relative rounded-3xl border border-brand-border bg-white/90 p-6 shadow-sm shadow-black/5 backdrop-blur dark:border-brand-night-border dark:bg-brand-night-raised/90">
+                    <div class="flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
+                                Enfoque
+                            </p>
+                            <h2 class="mt-2 font-gestico-serif text-2xl font-semibold text-brand-ink dark:text-brand-night-text">
+                                Todo el servicio en un mismo circuito
+                            </h2>
+                        </div>
+                        <span class="rounded-full border border-brand-border-warm bg-brand-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-brand-gold dark:border-brand-night-border dark:bg-brand-night-panel dark:text-brand-night-gold">
+                            Orden
+                        </span>
+                    </div>
+                    <div class="mt-6 grid gap-3">
+                        <div class="rounded-2xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">
+                                Economía
+                            </p>
+                            <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">
+                                Presupuestos, remesas y control de pagos
+                            </p>
+                            <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">
+                                Revisión clara para que la junta entienda el estado real de la comunidad.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">
+                                Gestión
+                            </p>
+                            <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">
+                                Actas, incidencias y documentación ordenada
+                            </p>
+                            <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">
+                                Un único hilo de trabajo para que nada importante se pierda por el camino.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl border border-brand-border-warm bg-brand-surface px-4 py-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">
+                                Seguimiento
+                            </p>
+                            <p class="mt-1 text-lg font-semibold text-brand-ink-soft dark:text-brand-night-text">
+                                Respuesta ágil y trazabilidad de cada acuerdo
+                            </p>
+                            <p class="mt-2 text-sm leading-6 text-brand-text-muted dark:text-brand-night-muted">
+                                La comunidad sabe qué está pendiente, qué se ha cerrado y qué sigue en curso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h2 class="mt-4 font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h2>
-            <p class="mt-4 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
+        </x-slot:art>
+    </x-sections.hero>
 
-  <section class="bg-brand-cream py-16 dark:bg-brand-night" data-gsap-reveal>
-    <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
-      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
-        @foreach (config('gestico.servicios_normativa') as [$step, $title, $text])
-          <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step }}</p>
-            <h3 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
-            <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Base
-          normativa</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Convertimos las obligaciones de la comunidad en tareas visibles y controladas.</h2>
-        <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">La Ley de Propiedad
-          Horizontal marca funciones muy concretas para el administrador: velar por el buen régimen de la finca,
-          preparar planes de gastos, atender conservación, ejecutar acuerdos y custodiar documentación.</p>
-      </div>
+  <x-sections.features
+      section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
+      container-class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
+      grid-class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+      card-class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-4 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Qué hacemos"
+      title="Servicios diseñados para que la comunidad funcione con menos ruido y más control."
+      text="La Ley de Propiedad Horizontal sitúa al administrador como una figura clave para velar por el régimen de la propiedad, preparar presupuestos, atender reparaciones urgentes, ejecutar acuerdos y custodiar la documentación. Sobre esa base construimos un servicio cercano, organizado y útil para vecinos y propietarios."
+      :items="config('gestico.servicios-hacemos')"
+  />
 
-    </div>
-  </section>
+  <x-sections.steps
+      section-class="bg-brand-cream py-20 sm:py-24 dark:bg-brand-night"
+      container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8"
+      grid-class="grid gap-4 sm:grid-cols-2"
+      card-class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Base normativa"
+      title="Convertimos las obligaciones de la comunidad en tareas visibles y controladas."
+      text="La Ley de Propiedad Horizontal marca funciones muy concretas para el administrador: velar por el buen régimen de la finca, preparar planes de gastos, atender conservación, ejecutar acuerdos y custodiar documentación."
+      :items="config('gestico.servicios-normativa')"
+  />
 
-  <section class="bg-white py-16 dark:bg-brand-night-panel" data-gsap-reveal>
-    <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8">
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Cómo
-          trabajamos</p>
-        <h2 class="mt-4 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Un flujo claro para que cada incidencia tenga seguimiento y cada decisión tenga contexto.</h2>
-        <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Nuestra forma de trabajar
-          combina atención directa, orden documental y seguimiento continuo. El objetivo es que la comunidad no dependa
-          de mensajes sueltos ni de decisiones improvisadas.</p>
-      </div>
+  <x-sections.steps
+      section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
+      container-class="mx-auto flex max-w-7xl gap-8 px-5 sm:px-6  lg:flex-row-reverse lg:px-8"
+      grid-class="grid gap-4 sm:grid-cols-2"
+      card-class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
+      intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
+      text-class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted"
+      eyebrow="Cómo trabajamos"
+      title="Un flujo claro para que cada incidencia tenga seguimiento y cada decisión tenga contexto."
+      text="Nuestra forma de trabajar combina atención directa, orden documental y seguimiento continuo. El objetivo es que la comunidad no dependa de mensajes sueltos ni de decisiones improvisadas."
+      :items="config('gestico.servicios-trabajo')"
+  />
 
-      <div class="grid gap-4 sm:grid-cols-2" data-gsap-stagger>
-        @foreach (config('gestico.servicios_trabajo') as [$step, $title, $text])
-          <article
-                  class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
-                  data-gsap-stagger-item>
-            <p class="text-sm font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $step }}</p>
-            <h3 class="mt-3 font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
-            <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-brand-ink-panel py-16 text-white dark:bg-brand-night" data-gsap-reveal>
+  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" data-gsap-reveal>
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">Más

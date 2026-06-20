@@ -12,7 +12,17 @@ class ServicesPageTest extends TestCase
 
         $response
             ->assertOk()
+            ->assertSee('min-h-dvh', false)
+            ->assertSeeText('Servicios')
             ->assertSeeText('Gestión con visión práctica, control económico y respuesta ágil.')
+            ->assertSeeText('Gestión económica')
+            ->assertSeeText('Juntas y actas')
+            ->assertSeeText('Incidencias y mantenimiento')
+            ->assertSeeText('Documentación transparente')
+            ->assertSeeText('Todo el servicio en un mismo circuito')
+            ->assertSee('data-hero-badge-icon', false)
+            ->assertSeeText('Pedir información')
+            ->assertSeeText('Ver administración de fincas')
             ->assertSeeText('Gestión económico-financiera')
             ->assertSeeText('Juntas, actas y acuerdos')
             ->assertSeeText('Morosidad y reclamaciones')

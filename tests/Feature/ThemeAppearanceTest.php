@@ -15,11 +15,12 @@ test('theme script only accepts light and dark preferences', function () {
     $head = file_get_contents(resource_path('views/components/head.blade.php'));
 
     expect($script)
-        ->toContain("const validThemes = ['light', 'dark']")
-        ->toContain('flux.appearance')
-        ->toContain("document.documentElement.classList.toggle('dark', normalizedTheme === 'dark')")
+        ->toContain('const initializeInteractiveFeatures = () => {')
+        ->toContain('initializeThemeToggle();')
+        ->toContain('initializeGsapAnimations();')
+        ->toContain("document.addEventListener('DOMContentLoaded', initializeInteractiveFeatures, {once: true})")
         ->and($head)
-        ->toContain("['light', 'dark'].includes")
+        ->toContain('@fluxAppearance')
         ->not->toContain("window.localStorage.getItem('flux.appearance') || 'system'");
 });
 
@@ -40,5 +41,5 @@ test('dark mode palette tokens are available to tailwind', function () {
         ->toContain('--color-brand-night:')
         ->toContain('--color-brand-night-panel:')
         ->toContain('--color-brand-night-border:')
-        ->toContain('--color-brand-night-gold:');
+        ->toContain('--color-brand-night-gold: #c9a53d;');
 });

@@ -88,7 +88,7 @@
     --color-brand-night-muted: #9fb1b3;
     --color-brand-night-text: #edf4f2;
     --color-brand-night-border: #365052;
-    --color-brand-night-gold: #e1b83d;
+    --color-brand-night-gold: #c9a53d;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -150,4 +150,32 @@ input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+@layer components {
+    .gestico-hero-shadow {
+        box-shadow:
+            0 26px 52px -22px rgb(0 0 0 / 0.42),
+            0 10px 20px -14px rgb(16 27 29 / 0.18);
+    }
+
+    .dark .gestico-hero-shadow {
+        box-shadow:
+            0 26px 52px -22px rgb(0 0 0 / 0.58),
+            0 10px 20px -14px rgb(0 0 0 / 0.26);
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        .gestico-hero-shadow {
+            box-shadow:
+                0 30px 60px -24px rgb(0 0 0 / 0.4),
+                0 12px 24px -16px rgb(16 27 29 / 0.16);
+        }
+
+        .dark .gestico-hero-shadow {
+            box-shadow:
+                0 30px 60px -24px rgb(0 0 0 / 0.54),
+                0 12px 24px -16px rgb(0 0 0 / 0.24);
+        }
+    }
 }

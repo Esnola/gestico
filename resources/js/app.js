@@ -4,21 +4,18 @@ import {initializeMobileMenu} from './menu.js';
 import {initializeProtection} from './email-form.js';
 import {initializeTheme, initializeThemeToggle} from './theme.js';
 
-
 initializeTheme();
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        initializeThemeToggle();
-        initializeMobileMenu();
-        initializeCookieConsent();
-        initializeProtection();
-        initializeGsapAnimations();
-    }, {once: true});
-} else {
+const initializeInteractiveFeatures = () => {
     initializeThemeToggle();
     initializeMobileMenu();
     initializeCookieConsent();
     initializeProtection();
     initializeGsapAnimations();
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeInteractiveFeatures, {once: true});
+} else {
+    initializeInteractiveFeatures();
 }

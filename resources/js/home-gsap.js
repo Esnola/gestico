@@ -127,7 +127,7 @@ const initializeTypewriter = () => {
     });
 };
 
-const initializeInicioCards = () => {
+const initializeInicioCards = (onBeforeComplete) => {
     const cards = gsap.utils.toArray(inicioCardSelector);
 
     if (!cards.length) {
@@ -148,26 +148,39 @@ const initializeInicioCards = () => {
 
     return new Promise((resolve) => {
         const animateCards = () => {
-            gsap.to(cards, {
-                autoAlpha: 1,
-                duration: 2.25,
-                delay: 1.25,
+            const timeline = gsap.timeline({
                 ease: 'power4.out',
                 onComplete: resolve,
+            });
+
+            timeline.to(cards, {
+                autoAlpha: 1,
+                duration: 1.8,
                 stagger: 0.16,
                 x: 0,
             });
+
+            if (typeof onBeforeComplete === 'function') {
+                timeline.call(onBeforeComplete, undefined, '>-1');
+            }
         };
 
         if (!('IntersectionObserver' in window)) {
-            gsap.to(cards, {
-                autoAlpha: 1,
-                duration: 1.25,
+            const timeline = gsap.timeline({
                 ease: 'power4.out',
                 onComplete: resolve,
+            });
+
+            timeline.to(cards, {
+                autoAlpha: 1,
+                duration: 0.95,
                 stagger: 0.16,
                 x: 0,
             });
+
+            if (typeof onBeforeComplete === 'function') {
+                timeline.call(onBeforeComplete, undefined, '>-1');
+            }
 
             return;
         }
@@ -214,7 +227,15 @@ const initializeHomeContentCards = () => {
     };
 
     animateGroupWhenVisible(cards, () => {
-        gsap.to(cards, {
+        const timeline = gsap.timeline({
+            onComplete: () => {
+                gsap.set(cards, {
+                    clearProps: 'all',
+                });
+            },
+        });
+
+        timeline.to(cards, {
             autoAlpha: 1,
             clipPath: 'inset(0% 0% 0% 0% round 0.75rem)',
             duration: 0.92,
@@ -229,13 +250,13 @@ const initializeHomeContentCards = () => {
             y: 0,
         });
 
-        gsap.to(headings, {
+        timeline.to(headings, {
             duration: 0.7,
             ease: 'power3.out',
             stagger: 0.08,
             textShadow: '0 0 18px rgb(212 168 36 / 0.45)',
             y: 0,
-        });
+        }, 0);
     }, resetCards);
 };
 
@@ -366,14 +387,12 @@ export const initializeHomeGsapAnimations = () => {
     }
 
     initializeTypewriter();
-    const inicioCardsAnimation = initializeInicioCards();
+    initializeInicioCards(() => {
+        initializeInicioCardSvgAnimations();
+    });
     initializeHomeContentCards();
     initializeMetodoCards();
     initializeClientesCards();
-
-    inicioCardsAnimation.then(() => {
-        initializeInicioCardSvgAnimations();
-    });
 };
 
 if (document.readyState === 'loading') {

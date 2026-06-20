@@ -18,7 +18,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('security.edit');
 });
 
-Route::get('.well-known/passkey-endpoints', function () {
+Route::get('.well-known/passkey-endpoints', static function () {
     return response()->json([
         'enroll' => route('security.edit'),
         'manage' => route('security.edit'),

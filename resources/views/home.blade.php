@@ -1,207 +1,44 @@
-
+@props([
+    'activado' => config('gestico.content.activados')
+])
 <x-layouts.public title="Gestión integral de comunidades">
-  <section class="relative overflow-hidden bg-brand-mist dark:bg-brand-night">
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:items-center lg:px-8 lg:py-20">
-      <div class="max-w-3xl">
-        <p class="text-sm font-normal uppercase text-brand-gold dark:text-brand-night-gold">Administración de fincas y
-          asesoría para comunidades</p>
-        <h1 data-typewriter
-            class="mt-5 font-gestico-serif text-4xl font-semibold tracking-tighter text-brand-ink dark:text-brand-night-text sm:text-5xl lg:text-6xl">
-          Tu comunidad, gestionada con cuentas claras y respuesta profesional.</h1>
+    <x-sections.hero
+        eyebrow="Administración de fincas y asesoría para comunidades"
+        title="Tu comunidad, gestionada con cuentas claras y respuesta profesional."
+        intro="Gestico Barbanza coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para que la presidencia y la junta tengan control sin cargar con el trabajo diario."
+        primary-cta-label="Solicitar una propuesta"
+        :primary-cta-href="route('contacto')"
+        secondary-cta-label="Ver servicios"
+        :secondary-cta-href="route('servicios')"
+        :stats="config('gestico.home_hero')"
+    >
+        <x-slot:art>
+            <x-sections.hero-art/>
+        </x-slot:art>
+    </x-sections.hero>
 
-          <div class="mt-8 flex flex-col gap-3 ">
-        <p animated-paragraph
-           class="mt-6 max-w-2xl text-lg leading-7 text-brand-text-hero dark:text-brand-night-muted">Gestico Barbanza
-          coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para
-          que la presidencia y la junta tengan control sin cargar con el trabajo diario.</p>
-              <div class="flex items-center justify-center gap-6">
-                  <a href="{{ route('contacto') }}"
-                     class="inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 text-sm font-normal text-white shadow-sm transition hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:text-brand-night dark:hover:bg-brand-gold-bright">Solicitar
-                      una propuesta</a>
-                  <a href="{{ route('servicios') }}"
-                     class="inline-flex items-center justify-center rounded-md border border-brand-stone bg-white/70 px-6 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver
-                      servicios</a>
-              </div>
-        </div>
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel">
-            <p class="font-gestico-serif text-3xl font-semibold text-brand-gold dark:text-brand-night-gold">24h</p>
-            <p class="mt-1 text-xs font-normal text-brand-text-light dark:text-brand-night-muted">Información preparada
-              para consulta online</p>
-          </div>
-          <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel
-          ">
-            <p class="font-gestico-serif text-3xl font-semibold text-brand-gold dark:text-brand-night-gold">360°</p>
-            <p class="mt-1 text-xs font-normal text-brand-text-light dark:text-brand-night-muted">Gestión
-              administrativa, fiscal, laboral y contable</p>
-          </div>
-          <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel">
-            <p class="font-gestico-serif text-3xl font-semibold text-brand-gold dark:text-brand-night-gold">1</p>
-            <p class="mt-1 text-xs font-normal text-brand-text-light dark:text-brand-night-muted">Interlocutor
-              coordinando incidencias y acuerdos</p>
-          </div>
-        </div>
-      </div>
+    <x-sections.features
+        eyebrow="Qué resolvemos"
+        title="Una administración pensada para comunidades que necesitan orden, transparencia y continuidad."
+        :items="config('gestico.home-resolver')"
+        :iconInLine="true"
+    />
 
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-        <!--? CARD UNO -->
-        <div data-card-inicio
-             class="rounded-2xl border border-brand-border bg-white p-3 shadow-xl shadow-brand-teal-shadow/10 dark:border-brand-night-border dark:bg-brand-night-panel lg:mr-8">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" class="h-full w-full">
-            <rect width="100%" height="100%" rx="28" fill="var(--color-brand-surface)"/>
-            <rect x="88" y="92" width="236" height="296" rx="16"
-                  fill="var(--color-brand-surface)"
-                  stroke="var(--color-brand-border)"
-                  stroke-width="3"/>
-            <rect x="132" y="136" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
-            <rect x="218" y="136" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
-            <rect x="132" y="222" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
-            <rect x="218" y="222" width="48" height="54" rx="8" fill="var(--color-brand-frost)"/>
-            <path d="M113 388h242" data-inicio-svg-accent
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="16"
-                  stroke-linecap="round"/>
-            <rect x="398" y="118" width="210" height="278" rx="20"
-                  fill="var(--color-brand-ink-panel)"/>
-            <rect x="434" y="158" width="138" height="30" rx="8"
-                  fill="var(--color-brand-surface)" opacity=".95"/>
-            <rect x="434" y="213" width="138" height="30" rx="8"
-                  fill="var(--color-brand-surface)" opacity=".85"/>
-            <rect x="434" y="268" width="138" height="30" rx="8"
-                  fill="var(--color-brand-surface)" opacity=".75"/>
-            <circle cx="450" cy="350" r="22" data-inicio-svg-accent
-                    fill="var(--color-brand-gold-bright)"/>
-            <path d="M484 350h75m-26 0v27m26-27v20" data-inicio-svg-draw
-                  stroke="var(--color-brand-gold-bright)"
-                  stroke-width="12"
-                  stroke-linecap="round"/>
-            <path d="M78 92l128-62 128 62" data-inicio-svg-draw
-                  fill="none"
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="12"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M392 89c41-31 120-25 158 20" data-inicio-svg-accent
-                  fill="none"
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="4"
-                  opacity=".25"/>
-            <path d="M114 430c132 24 335 22 492-5"
-                  fill="none"
-                  stroke="var(--color-brand-ink-panel)"
-                  stroke-width="5"
-                  opacity=".12"/>
-          </svg>
-        </div>
-
-        <!--? CARD DOS -->
-        <div data-card-inicio
-             class="rounded-2xl border border-brand-border bg-white p-3 shadow-xl shadow-brand-teal-shadow/10 dark:border-brand-night-border dark:bg-brand-night-panel lg:mt-8 lg:-ml-8">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" class="h-full w-full">
-            <rect width="720" height="480" rx="28" fill="var(--color-brand-surface)"/>
-            <rect x="64" y="86" width="360" height="250" rx="18"
-                  fill="var(--color-brand-surface)"
-                  stroke="var(--color-brand-border)"
-                  stroke-width="3"/>
-            <path d="M91 132h126M91 166h216M91 200h188M91 234h236" data-inicio-svg-draw
-                  stroke="var(--color-brand-text)"
-                  stroke-width="14"
-                  stroke-linecap="round"
-                  opacity=".22"/>
-            <path d="M91 290h138" data-inicio-svg-accent
-                  stroke="var(--color-brand-gold)"
-                  stroke-width="18"
-                  stroke-linecap="round"/>
-            <rect x="444" y="118" width="188" height="250" rx="20"
-                  fill="var(--color-brand-ink-panel)"/>
-            <path d="M484 296V238M528 296V196M572 296V158" data-inicio-svg-draw
-                  stroke="var(--color-brand-gold-bright)"
-                  stroke-width="22"
-                  stroke-linecap="round"/>
-            <path d="M484 322h98" data-inicio-svg-accent
-                  stroke="var(--color-brand-mist)"
-                  stroke-width="8"
-                  stroke-linecap="round"
-                  opacity=".45"/>
-            <path d="M68 406c108 30 238 30 334 0"
-                  fill="none"
-                  stroke="var(--color-brand-ink-panel)"
-                  stroke-width="4"
-                  opacity=".12"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-white py-20 dark:bg-brand-night-panel">
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Qué
-          resolvemos</p>
-        <h2 class="mt-3 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          Una administración pensada para comunidades que necesitan orden, transparencia y continuidad.</h2>
-      </div>
-      <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        @foreach (config('gestico.home') as [$title, $text])
-          <article data-home-card
-                   class="rounded-lg border border-brand-border-soft bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
-            <h3 class="font-gestico-serif text-xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $title }}</h3>
-            <p class="mt-3 text-sm leading-6 text-brand-text-soft dark:text-brand-night-muted">{{ $text }}</p>
-          </article>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night">
-    <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">
-          Método</p>
-        <h2 class="mt-3 font-gestico-serif text-3xl font-semibold sm:text-4xl">Primero entendemos la comunidad. Después
-          ponemos rutina y control.</h2>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-3">
-        @foreach (config('gestico.home_dos') as [$step, $title, $text])
-          <div data-metodo-card
-               class="rounded-lg border border-white/15 bg-white/6 p-5 dark:border-brand-night-border dark:bg-brand-night-raised">
-            <p class="font-gestico-serif text-xl font-semibold text-brand-gold-bright dark:text-brand-night-gold">{{ $step }}</p>
-            <h3 class="mt-4 font-gestico-serif text-2xl font-semibold">{{ $title }}</h3>
-            <p class="mt-3 text-sm leading-6 text-brand-frost">{{ $text }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-brand-cream py-20 dark:bg-brand-night-panel">
-    <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_.9fr] lg:px-8">
-      <div>
-        <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Área de
-          clientes</p>
-        <h2 class="mt-3 font-gestico-serif text-3xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-4xl">
-          La información privada llegará en la siguiente fase.</h2>
-        <p class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Dejamos preparada la puerta
-          de acceso para que presidentes, juntas y propietarios puedan consultar documentación, movimientos, informes y
-          comunicaciones cuando construyamos la zona privada.</p>
-        <a href="{{ route('client-portal') }}"
-           class="mt-7 inline-flex rounded-md border border-brand-stone bg-white px-5 py-3 text-sm font-normal text-brand-text-strong transition hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:text-brand-night-text dark:hover:border-brand-night-gold">Ver
-          planteamiento del portal</a>
-      </div>
-      <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
-        <div class="grid gap-3">
-          @foreach (config('gestico.home_tres') as [$texto, $view, $icono])
-            <div data-clientes-card
-                 class="flex items-center gap-4 rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-text">
-              <svg xmlns="http://www.w3.org/2000/svg" stroke="none" fill="currentColor"
-                   viewBox=" {{ $view ? '0 0 24 24': '0 0 384 512'}}" class="size-8 opacity-80">{!! $icono !!}</svg>
-              {{ $texto }}</div>
-          @endforeach
-        </div>
-      </div>
-    </div>
-  </section>
+    <x-sections.steps
+        eyebrow="Método"
+        title="Primero entendemos la comunidad. Después ponemos rutina y control."
+        :items="config('gestico.home-metodo')"
+    />
+@if($activado['home-client-portal'])
+    <x-sections.client-portal
+        eyebrow="Área de clientes"
+        title="La información privada llegará en la siguiente fase."
+        text="Dejamos preparada la puerta de acceso para que presidentes, juntas y propietarios puedan consultar documentación, movimientos, informes y comunicaciones cuando construyamos la zona privada."
+        cta-label="Ver planteamiento del portal"
+        :cta-href="route('client-portal')"
+        :items="config('gestico.home-client-portal')"
+    />
+    @endif
 </x-layouts.public>
 
 @vite('resources/js/home-gsap.js')
