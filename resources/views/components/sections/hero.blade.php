@@ -13,7 +13,6 @@
 
 <section class="relative min-h-dvh overflow-hidden bg-brand-mist dark:bg-brand-night {{ $sectionClass }}">
     <div class="mx-auto mt-4 grid min-h-dvh gap-12 px-4 sm:px-6 lg:mt-0 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-28">
-        <h2 class="text-3xl font-bold text-white">ARCHIVO DE CONFIGURACION</h2>
         <div class="max-w-4xl">
             <p class="text-sm font-normal uppercase text-brand-gold dark:text-brand-night-gold">{{ $eyebrow }}</p>
             <h1 data-typewriter

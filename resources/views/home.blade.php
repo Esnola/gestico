@@ -1,6 +1,3 @@
-@props([
-    'activado' => config('gestico.content.activados')
-])
 <x-layouts.public title="Gestión integral de comunidades">
     <x-sections.hero
         eyebrow="Administración de fincas y asesoría para comunidades"
@@ -29,7 +26,7 @@
         title="Primero entendemos la comunidad. Después ponemos rutina y control."
         :items="config('gestico.home-metodo')"
     />
-@if($activado['home-client-portal'])
+
     <x-sections.client-portal
         eyebrow="Área de clientes"
         title="La información privada llegará en la siguiente fase."
@@ -38,7 +35,7 @@
         :cta-href="route('client-portal')"
         :items="config('gestico.home-client-portal')"
     />
-    @endif
+
 </x-layouts.public>
 
 @vite('resources/js/home-gsap.js')

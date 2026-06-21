@@ -1,16 +1,16 @@
 <footer class="border-t border-brand-border bg-brand-ink-panel text-white dark:border-brand-night-border dark:bg-brand-night-panel">
     <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
         <div>
-            <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza" class="h-16 w-auto brightness-125">
+            <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza" width="600" height="258" loading="lazy" decoding="async" class="h-16 w-auto brightness-125">
             <p class="mt-5 max-w-md text-sm leading-6 text-brand-frost">Gestión integral de comunidades con criterio
                 profesional, trazabilidad financiera y comunicación clara para presidentes, juntas y propietarios.</p>
         </div>
 
         <div>
             <p class="font-gestico-serif text-xl font-semibold text-brand-gold-bright">Web</p>
-            <div class="mt-4 grid gap-2 text-sm text-brand-frost">
-                <x-header-links :isfooter="true"/>
-            </div>
+            {{--<div class="mt-4 grid grid-cols-2 gap-2 text-sm text-brand-frost">--}}
+                <x-main-links :isfooter="true"/>
+           {{-- </div>--}}
         </div>
 
         <div>

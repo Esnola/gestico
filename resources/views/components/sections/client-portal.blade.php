@@ -6,7 +6,7 @@
     'ctaHref',
     'items' => [],
 ])
-
+@if(config('gestico.activations.home-client-portal'))
 <section class="bg-brand-cream py-24 dark:bg-brand-night-panel">
     <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_.9fr] lg:px-8">
         <div>
@@ -35,3 +35,4 @@
         </div>
     </div>
 </section>
+@endif

@@ -17,7 +17,7 @@ test('theme script only accepts light and dark preferences', function () {
     expect($script)
         ->toContain('const initializeInteractiveFeatures = () => {')
         ->toContain('initializeThemeToggle();')
-        ->toContain('initializeGsapAnimations();')
+        ->toContain('initializeDeferredGsapAnimations();')
         ->toContain("document.addEventListener('DOMContentLoaded', initializeInteractiveFeatures, {once: true})")
         ->and($head)
         ->toContain('@fluxAppearance')

@@ -2,10 +2,11 @@
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Gestico Barbanza">
             <img src="{{ asset('images/gesticobarbanza.png') }}" alt="Gestico Barbanza"
+                 width="600" height="258" decoding="async" fetchpriority="high"
                  class="h-11 w-auto rounded-md px-2 py-1 dark:bg-transparent sm:h-14">
         </a>
 
-        <x-header-links :isfooter="false"/>
+        <x-main-links :isfooter="false"/>
 
         <div class="flex items-center gap-2">
             <button type="button"
@@ -61,7 +62,7 @@
                     </svg>
                 </button>
             </div>
-            <x-header-links variant="mobile" aria-label="Menú principal móvil"/>
+            <x-main-links variant="mobile" aria-label="Menú principal móvil"/>
         </div>
     </div>
 </header>

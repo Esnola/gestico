@@ -3,16 +3,6 @@
 $icons = require __DIR__.'/icons.php';
 
 return [
-    'activados' => [
-        'home-hero' => true,
-        'home-resolver' => true,
-        'home-metodo' => true,
-        'home-client-portal' => 0,
-        'servicios-hacemos' => true,
-        'servicios-normativa' => true,
-        'servicios-trabajo' => true,
-    ],
-
     /*** //   #####   Página de inicio Home   ###### // */
     'home_hero' => [
         ['value' => '24h', 'text' => 'Información preparada para consulta online'],

@@ -135,7 +135,7 @@ const initializeInicioCards = (onBeforeComplete) => {
     }
 
     const getViewportCrossingOffset = (card, index) => {
-        const direction = index % 2 === 0 ? -1 : 1;
+        const direction = index % 2 === 0 ? 1 : -1;
 
         return direction * (window.innerWidth + card.getBoundingClientRect().width);
     };

@@ -106,6 +106,3 @@
     </div>
   </section>
 </x-layouts.public>
-
-
-@vite('resources/js/home-gsap.js')

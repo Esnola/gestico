@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @import '../../vendor/livewire/flux/dist/flux.css';
 
 @source '../views';
+@source '../js';
+@source '../../app';
+@source '../../config';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
@@ -27,33 +29,22 @@
     unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-@font-face {
-    font-family: 'Dosis';
-    font-style: normal;
-    font-weight: 200 800;
-    font-display: swap;
-    src: url('../fonts/gestico/dosis.woff2') format('woff2');
-}
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-sans: 'Nunito Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-gestico-serif: 'IBM Plex Sans', 'Nunito Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-gestico-serif: 'Nunito Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
     --font-gestico-sans: 'Nunito Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-gestico-logo: 'Dosis', 'Avenir Next', Montserrat, ui-sans-serif, system-ui, sans-serif;
 
     --color-brand-cream: #f7f4ed;
     --color-brand-mist: #eef1ec;
     --color-brand-surface: #fbfaf6;
-    --color-brand-surface-muted: #faf8f1;
     --color-brand-surface-warm: #f4f1e8;
     --color-brand-border: #d8d0bd;
     --color-brand-border-muted: #d5ccb7;
     --color-brand-border-soft: #e4dccd;
     --color-brand-border-warm: #e2dacb;
     --color-brand-border-light: #e7dfcf;
-    --color-brand-border-pale: #eee7da;
     --color-brand-stone: #b7aa8e;
     --color-brand-gold: #a98211;
     --color-brand-gold-hover: #8d6b0d;
@@ -64,22 +55,16 @@
     --color-brand-ink: #1f3336;
     --color-brand-ink-dark: #1e2a2c;
     --color-brand-ink-panel: #213639;
-    --color-brand-ink-raised: #24383b;
     --color-brand-ink-soft: #253b3e;
     --color-brand-text-strong: #294044;
     --color-brand-text: #415154;
-    --color-brand-text-panel: #405154;
     --color-brand-text-muted: #536467;
     --color-brand-text-hero: #4f6063;
     --color-brand-text-light: #58696c;
     --color-brand-text-card: #5d6f72;
     --color-brand-text-soft: #607174;
-    --color-brand-teal-shadow: #43595d;
     --color-brand-teal-card: #3f5356;
-    --color-brand-teal-badge: #35575b;
-    --color-brand-teal-badge-bg: #e8f0ef;
     --color-brand-frost: #d9e3e4;
-    --color-brand-frost-strong: #d7e5e4;
     --color-brand-frost-muted: #b8c8ca;
     --color-brand-night: #101b1d;
     --color-brand-night-panel: #162629;
@@ -150,32 +135,4 @@ input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
-}
-
-@layer components {
-    .gestico-hero-shadow {
-        box-shadow:
-            0 26px 52px -22px rgb(0 0 0 / 0.42),
-            0 10px 20px -14px rgb(16 27 29 / 0.18);
-    }
-
-    .dark .gestico-hero-shadow {
-        box-shadow:
-            0 26px 52px -22px rgb(0 0 0 / 0.58),
-            0 10px 20px -14px rgb(0 0 0 / 0.26);
-    }
-
-    @supports (-webkit-touch-callout: none) {
-        .gestico-hero-shadow {
-            box-shadow:
-                0 30px 60px -24px rgb(0 0 0 / 0.4),
-                0 12px 24px -16px rgb(16 27 29 / 0.16);
-        }
-
-        .dark .gestico-hero-shadow {
-            box-shadow:
-                0 30px 60px -24px rgb(0 0 0 / 0.54),
-                0 12px 24px -16px rgb(0 0 0 / 0.24);
-        }
-    }
 }

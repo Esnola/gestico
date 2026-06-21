@@ -13,6 +13,9 @@ export default defineConfig({
                 'resources/js/home-gsap.js',
                 'resources/js/passkeys.js',
             ],
+            assets: [
+                'resources/fonts/gestico/nunito-sans-latin.woff2',
+            ],
             refresh: true,
         }),
         tailwindcss(),

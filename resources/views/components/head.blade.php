@@ -15,6 +15,7 @@
   <link rel="icon" href="{{ asset('favicon.svg') }}?v={{ $faviconVersion }}" type="image/svg+xml">
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v={{ $faviconVersion }}" sizes="any">
   <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}?v={{ $faviconVersion }}">
+  <link rel="preload" href="{{ Vite::asset('resources/fonts/gestico/nunito-sans-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
   <meta name="description"
         content="{{ $description ?? 'Gestico Barbanza gestiona comunidades de propietarios, administración de fincas y asesoría económico-financiera, fiscal y laboral.' }}">
 

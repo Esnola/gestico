@@ -9,6 +9,7 @@
         <div class="flex h-full flex-col items-start pb-6 text-xs text-brand-text-muted lg:flex-row lg:items-center lg:gap-5 lg:pb-0 lg:pr-6 dark:text-brand-night-muted">
             <img src="{{ asset('images/cookie.png') }}"
                  alt=""
+                 width="512" height="512" loading="lazy" decoding="async"
                  class="h-8 w-8 rounded-full bg-brand-surface-warm/80 p-1 shadow-sm shadow-brand-ink/5 sm:h-12 sm:w-12 lg:h-16 lg:w-16 dark:bg-brand-night-surface dark:shadow-black/10">
             <div class="pt-6 lg:pt-0">
                 <h4 class="mb-1 w-full -translate-y-1 text-xl font-bold leading-none text-brand-ink dark:text-brand-night-text">Aviso de Cookies</h4>
