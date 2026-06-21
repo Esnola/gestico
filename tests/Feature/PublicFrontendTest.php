@@ -22,11 +22,13 @@ it('loads the home specific gsap entrypoint only on the home page', function ():
 
     $homeResponse
         ->assertOk()
-        ->assertSee('home-gsap', false);
+        ->assertSee('home-gsap', false)
+        ->assertSee('home-card-headings', false);
 
     $contactResponse
         ->assertOk()
-        ->assertDontSee('home-gsap', false);
+        ->assertDontSee('home-gsap', false)
+        ->assertDontSee('home-card-headings', false);
 });
 
 it('keeps the public client area focused on contact instead of login', function (): void {

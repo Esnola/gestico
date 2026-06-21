@@ -10,6 +10,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/home-card-headings.js',
                 'resources/js/home-gsap.js',
                 'resources/js/passkeys.js',
             ],

@@ -8,11 +8,14 @@
   <x-layouts.public.header/>
 
   <main class="overflow-x-clip" data-gsap-page>
+
+    <h3 class="text-6xl font-bold w-full border text-center py-12">IGUALAR SECTIONS STEPS Y FEATURES</h3>
     {{ $slot }}
   </main>
 
   <x-layouts.public.footer/>
 </div>
 <x-cookies/>
+@vite(['resources/js/home-card-headings.js', ])
 </body>
 </html>
