@@ -7,15 +7,15 @@
 <div class="min-h-screen">
   <x-layouts.public.header/>
 
-  <main class="overflow-x-clip" data-gsap-page>
+    <x-aviso-principal contenido="" /><!-- NOTAS PARA DISEÑO QUE SE MOSTRARÁN DE RECORDATORIO -->
 
-    <h3 class="text-6xl font-bold w-full border text-center py-12">IGUALAR SECTIONS STEPS Y FEATURES</h3>
+  <main class="overflow-x-clip">
+
     {{ $slot }}
   </main>
 
   <x-layouts.public.footer/>
 </div>
 <x-cookies/>
-@vite(['resources/js/home-card-headings.js', ])
 </body>
 </html>

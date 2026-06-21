@@ -4,27 +4,29 @@
           title="Tu comunidad, gestionada con cuentas claras y respuesta profesional."
           intro="Gestico Barbanza coordina la gestión administrativa, económico-financiera, fiscal y laboral de comunidades de propietarios para que la presidencia y la junta tengan control sin cargar con el trabajo diario."
           primary-cta-label="Solicitar una propuesta"
-          :primary-cta-href="route('contacto')"
+          primary-cta-href="contacto"
           secondary-cta-label="Ver servicios"
-          :secondary-cta-href="route('servicios')"
-          :stats="config('gestico.home_hero')"
+          secondary-cta-href="servicios"
+          datos="gestico.home_hero"
   >
     <x-slot:art>
-      <x-sections.hero-art/>
+          <x-sections.hero-art-card-one/>
     </x-slot:art>
+
   </x-sections.hero>
 
   <x-sections.features
           eyebrow="Qué resolvemos"
           title="Una administración pensada para comunidades que necesitan orden, transparencia y continuidad."
-          :items="config('gestico.home-resolver')"
+          items='gestico.home-resolver'
           :iconInLine="true"
   />
 
-  <x-sections.steps
+  <x-sections.features
+          container-class="lg:flex-row-reverse"
           eyebrow="Método"
           title="Primero entendemos la comunidad. Después ponemos rutina y control."
-          :items="config('gestico.home-metodo')"
+          items='gestico.home-metodo'
   />
 
   <x-sections.client-portal

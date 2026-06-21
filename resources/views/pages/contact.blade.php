@@ -1,5 +1,5 @@
 <x-layouts.public title="Contacto">
-  <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24" data-gsap-reveal>
+  <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24">
     <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
       <div>
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">
@@ -8,13 +8,13 @@
           Cuéntanos qué necesita tu comunidad.</h1>
         <p class="mt-6 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted">Prepararemos una propuesta
           ajustada al tamaño de la comunidad, situación económica, volumen de incidencias y necesidades de asesoría.</p>
-        <div class="mt-8 grid gap-3 text-sm font-normal text-brand-text dark:text-brand-night-muted" data-gsap-stagger>
+        <div class="mt-8 grid gap-3 text-sm font-normal text-brand-text dark:text-brand-night-muted">
           <x-protected-email-link
                   class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold"
-                  data-gsap-stagger-item/>
+                  />
           <a href="tel:{{ config('gestico.phone_href') }}"
              class="inline-flex items-center gap-2 rounded-md border border-brand-border bg-white p-4 hover:border-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised dark:hover:border-brand-night-gold"
-             data-gsap-stagger-item>
+             >
             <x-aux-icon type="phone"/>
             <span>{{ config('gestico.phone') }}</span>
           </a>
@@ -65,7 +65,6 @@
   </section>
 
   <x-sections.features
-      data-gsap-reveal
       section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
       container-class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
       grid-class="mt-10 grid gap-4 sm:grid-cols-2"
@@ -75,6 +74,6 @@
       eyebrow="Para orientar la propuesta"
       title="Cuanta más realidad veamos al inicio, mejor podremos ajustar la gestión."
       text="No todas las comunidades necesitan el mismo nivel de acompañamiento. Antes de proponer, conviene entender el volumen de viviendas, el estado de la documentación, las incidencias abiertas y las obligaciones económicas o laborales."
-      :items="config('gestico.contact')"
+      items='gestico.contact'
   />
 </x-layouts.public>

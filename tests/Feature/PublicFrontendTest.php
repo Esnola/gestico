@@ -18,18 +18,23 @@ it('renders the public pages that make up the frontend', function (string $route
 
 it('loads the home specific gsap entrypoint only on the home page', function (): void {
     $homeResponse = $this->get(route('home'));
-    $contactResponse = $this->get(route('contacto'));
 
     $homeResponse
         ->assertOk()
         ->assertSee('home-gsap', false)
-        ->assertSee('home-card-headings', false);
-
-    $contactResponse
-        ->assertOk()
-        ->assertDontSee('home-gsap', false)
-        ->assertDontSee('home-card-headings', false);
+        ->assertSee('data-typewriter', false)
+        ->assertSee('data-card-inicio', false);
 });
+
+it('keeps public pages free from gsap animation hooks', function (string $routeName): void {
+    $response = $this->get(route($routeName));
+
+    $response
+        ->assertOk()
+        ->assertDontSee('data-gsap-reveal', false)
+        ->assertDontSee('data-gsap-stagger', false)
+        ->assertDontSee('data-gsap-stagger-item', false);
+})->with(['servicios', 'asesoria', 'fincas', 'location', 'contacto', 'client-portal']);
 
 it('keeps the public client area focused on contact instead of login', function (): void {
     $response = $this->get(route('client-portal'));

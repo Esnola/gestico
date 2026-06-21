@@ -67,7 +67,7 @@
         ];
     @endphp
 
-    <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24" data-gsap-reveal>
+    <section class="bg-brand-mist py-20 dark:bg-brand-night sm:py-24">
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold dark:text-brand-night-gold">Comparativa tipográfica</p>
             <h1 class="mt-4 max-w-4xl font-gestico-serif text-4xl font-semibold leading-tight text-brand-ink dark:text-brand-night-text sm:text-5xl">Tres sans-serif para decidir cuál acompaña mejor los titulares de Gestico.</h1>
@@ -80,11 +80,11 @@
         </div>
     </section>
 
-    <section class="bg-white py-20 dark:bg-brand-night-panel sm:py-24" data-gsap-reveal>
+    <section class="bg-white py-20 dark:bg-brand-night-panel sm:py-24">
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <div class="grid gap-5 lg:grid-cols-3" data-gsap-stagger>
+            <div class="grid gap-5 lg:grid-cols-3">
                 @foreach ($fonts as $font)
-                    <article data-font-compare-card="{{ $font['id'] }}" class="rounded-md border border-brand-border-warm bg-brand-surface p-6 shadow-sm shadow-black/5 dark:border-brand-night-border dark:bg-brand-night-raised" data-gsap-stagger-item>
+                    <article data-font-compare-card="{{ $font['id'] }}" class="rounded-md border border-brand-border-warm bg-brand-surface p-6 shadow-sm shadow-black/5 dark:border-brand-night-border dark:bg-brand-night-raised">
                         <div class="flex items-start justify-between gap-4">
                             <div>
                                 <p class="text-sm font-normal uppercase tracking-[0.06em] text-brand-gold dark:text-brand-night-gold">{{ $font['badge'] }}</p>
@@ -108,9 +108,9 @@
                             </p>
                         </div>
 
-                        <dl class="mt-6 grid gap-4" data-gsap-stagger>
+                        <dl class="mt-6 grid gap-4">
                             @foreach ($font['notes'] as $label => $note)
-                                <div class="rounded-md border border-brand-border-light bg-white px-4 py-3 dark:border-brand-night-border dark:bg-brand-night-surface" data-gsap-stagger-item>
+                                <div class="rounded-md border border-brand-border-light bg-white px-4 py-3 dark:border-brand-night-border dark:bg-brand-night-surface">
                                     <dt class="text-xs font-medium uppercase tracking-[0.08em] text-brand-gold dark:text-brand-night-gold">{{ $label }}</dt>
                                     <dd class="mt-1 text-sm leading-6 text-brand-text-card dark:text-brand-night-muted">{{ $note }}</dd>
                                 </div>

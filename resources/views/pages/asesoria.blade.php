@@ -11,9 +11,9 @@
       ]"
       {{--section-class=""--}}
       primary-cta-label="Pedir asesoría"
-      :primary-cta-href="route('contacto')"
+      primary-cta-href='contacto'
       secondary-cta-label="Ver servicios"
-      :secondary-cta-href="route('servicios')"
+      secondary-cta-href='servicios'
   >
       <x-slot:art>
           <div class="relative">
@@ -65,10 +65,10 @@
       eyebrow="Qué cubrimos"
       title="La asesoría funciona mejor cuando la información económica no llega tarde ni fragmentada."
       text="Integramos contabilidad, fiscalidad y gestión laboral en un mismo circuito para que la comunidad pueda tomar decisiones con datos fiables y sin depender de hojas sueltas o explicaciones improvisadas."
-      :items="config('gestico.asesoria-cubrimos')"
+      items='gestico.asesoria-cubrimos'
   />
 
-  <x-sections.steps
+  <x-sections.features
       section-class="bg-brand-cream py-20 sm:py-24 dark:bg-brand-night"
       container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8"
       grid-class="grid gap-4 sm:grid-cols-2"
@@ -78,7 +78,7 @@
       eyebrow="Cómo trabajamos"
       title="Un circuito económico sencillo para que cada decisión tenga contexto y respaldo."
       text="La asesoría aporta más valor cuando no se limita a presentar obligaciones. Revisamos el movimiento económico, ordenamos la documentación de soporte y dejamos el expediente listo para consulta, revisión o junta."
-      :items="config('gestico.asesoria-trabajamos')"
+      items='gestico.asesoria-trabajamos'
   />
 
   <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" >

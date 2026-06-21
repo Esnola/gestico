@@ -8,9 +8,7 @@
 
         <div>
             <p class="font-gestico-serif text-xl font-semibold text-brand-gold-bright">Web</p>
-            {{--<div class="mt-4 grid grid-cols-2 gap-2 text-sm text-brand-frost">--}}
                 <x-main-links :isfooter="true"/>
-           {{-- </div>--}}
         </div>
 
         <div>

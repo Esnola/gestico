@@ -9,11 +9,11 @@
             ['label' => 'Incidencias y mantenimiento', 'icon' => 'house'],
             ['label' => 'Documentación en orden', 'icon' => 'file-lines'],
         ]"
-          {{--section-class=""--}}
+          section-class="lg:flex-row-reverse!"
           primary-cta-label="Solicitar información"
-          :primary-cta-href="route('contacto')"
+          primary-cta-href='contacto'
           secondary-cta-label="Ver servicios"
-          :secondary-cta-href="route('servicios')"
+          secondary-cta-href='servicios'
   >
     <x-slot:art>
       <div class="relative lg:mr-8">
@@ -74,8 +74,7 @@
   </x-sections.hero>
 
   <x-sections.features
-          section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel "
-          container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8"
+{{--          container-class=""--}}
           grid-class="grid grid-cols-2 gap-4 gap-5"
           card-class="rounded-md border border-brand-border bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
           intro-text-class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted"
@@ -84,12 +83,11 @@
           eyebrow="Qué hacemos"
           title="La comunidad necesita alguien que ordene, explique y proporcione seguimiento."
           text="La administración de fincas no es solo tramitar papeles. También es interpretar los acuerdos de la junta, coordinar proveedores, avisar a tiempo de los plazos y mantener una relación clara entre vecinos, presidencia y comunidad."
-          :items="config('gestico.fincas-hacemos')"
+          items='gestico.fincas-hacemos'
   />
 
-  <x-sections.steps
-          section-class="bg-brand-cream py-20 sm:py-24 dark:bg-brand-night"
-          container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8"
+  <x-sections.features
+          container-class="lg:flex-row-reverse"
           grid-class="grid gap-4 sm:grid-cols-2"
           card-class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
           intro-text-class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted"
@@ -98,12 +96,11 @@
           eyebrow="Situaciones habituales"
           title="La administración aporta más valor cuando hay problemas que no conviene dejar para después."
           text="Cada comunidad tiene momentos en los que necesita apoyo más allá del trámite básico: una obra que se complica, un recibo pendiente, un siniestro, un vecino que necesita respuestas o una junta que exige claridad y orden."
-          :items="config('gestico.fincas-situaciones')"
+          items='gestico.fincas-situaciones'
   />
 
   <x-sections.features
-          section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
-          container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8"
+{{--          container-class=""--}}
           grid-class="grid gap-4"
           card-class="rounded-md border border-brand-border-warm bg-brand-surface p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
           intro-text-class="mt-5 leading-7 text-brand-text-muted dark:text-brand-night-muted"
@@ -112,10 +109,10 @@
           eyebrow="Gestión documentada"
           title="Cada actuación queda conectada con un acuerdo, un gasto o una obligación concreta."
           text="Una buena administración evita que la comunidad dependa de memoria informal: cada reparación, reclamación, presupuesto o comunicación debe poder explicarse con contexto y documentación."
-          :items="config('gestico.fincas-gestion')"
+          items='gestico.fincas-gestion'
   />
 
-  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" data-gsap-reveal>
+  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24">
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <div class="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
         <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">

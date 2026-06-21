@@ -9,6 +9,7 @@ class ServicesPageTest extends TestCase
     public function test_services_page_shows_the_main_service_sections(): void
     {
         $response = $this->get(route('servicios'));
+        $content = $response->getContent();
 
         $response
             ->assertOk()
@@ -30,5 +31,8 @@ class ServicesPageTest extends TestCase
             ->assertSeeText('Libro de acuerdos')
             ->assertSee('data-service-icon', false)
             ->assertSeeText('La transparencia importa tanto como la gestión.');
+
+        expect(substr_count($content, 'bg-white py-24 dark:bg-brand-night-panel'))->toBe(2);
+        expect(substr_count($content, 'bg-brand-cream py-20 sm:py-24 dark:bg-brand-night'))->toBe(1);
     }
 }

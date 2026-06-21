@@ -1,5 +1,5 @@
 <x-layouts.public title="Área clientes">
-  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" data-gsap-reveal>
+  <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24">
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <p class="text-sm font-normal uppercase tracking-[0.04em] text-brand-gold-bright dark:text-brand-night-gold">Área
         clientes</p>
@@ -19,10 +19,10 @@
     </div>
   </section>
 
-  <section class="bg-brand-cream py-20 dark:bg-brand-night-panel sm:py-24" data-gsap-reveal>
-    <div class="mx-auto grid max-w-7xl gap-4 px-5 sm:px-6 md:grid-cols-2 lg:px-8" data-gsap-stagger>
+  <section class="bg-brand-cream py-20 dark:bg-brand-night-panel sm:py-24">
+    <div class="mx-auto grid max-w-7xl gap-4 px-5 sm:px-6 md:grid-cols-2 lg:px-8">
       @foreach (['Documentación comunitaria', 'Estados de cuentas', 'Facturas y presupuestos', 'Avisos y comunicaciones'] as $item)
-        <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised" data-gsap-stagger-item>
+        <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
           <h2 class="font-gestico-serif text-2xl font-semibold text-brand-ink-soft dark:text-brand-night-text">{{ $item }}</h2>
           <p class="mt-3 leading-7 text-brand-text-card dark:text-brand-night-muted">Módulo previsto para la siguiente
             fase del proyecto, con permisos y acceso privado por cliente.</p>
