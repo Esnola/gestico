@@ -7,6 +7,9 @@ test('public header renders a light and dark theme toggle', function () {
         ->assertOk()
         ->assertSee('data-theme-toggle', false)
         ->assertSee('Cambiar modo oscuro')
+        ->assertSee('rounded-full', false)
+        ->assertSee('dark:translate-x-3', false)
+        ->assertSee('M18.5 15.7A7.7 7.7', false)
         ->assertSee('dark:bg-brand-night', false);
 });
 
