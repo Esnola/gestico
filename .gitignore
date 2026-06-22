@@ -26,3 +26,5 @@ opencode.json
 /.vscode
 /.zed
 /.playwright-cli
+
+testsprite_tests/tmp/config.json

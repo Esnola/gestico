@@ -1,6 +1,13 @@
 [mcp_servers.laravel-boost]
-command = "php"
-args = ["artisan", "boost:mcp"]
+command = "/Users/juanjose/Library/Application Support/Herd/bin/php"
+args = ["/Users/juanjose/PhpstormProjects/gestico/artisan", "boost:mcp"]
 
 [mcp_servers.laravel-boost.tools.search-docs]
+approval_mode = "approve"
+
+[mcp_servers.TestSprite]
+command = "sh"
+args = ["-lc", "API_KEY=\"$TESTSPRITE_API_KEY\" npx @testsprite/testsprite-mcp@latest"]
+
+[mcp_servers.TestSprite.tools.testsprite_check_account_info]
 approval_mode = "approve"

@@ -1,0 +1,207 @@
+version: "2"
+type: frontend
+tech_stack:
+  - php 8.4
+  - laravel 13
+  - blade
+  - livewire 4
+  - filament 5
+  - tailwindcss 4
+  - fortify 1
+  - pest 4
+routes:
+  - path: /
+    file: resources/views/home.blade.php
+    auth_required: false
+    description: Marketing home page with hero, feature sections, and client portal teaser.
+  - path: /servicios
+    file: resources/views/pages/servicios.blade.php
+    auth_required: false
+    description: Services page with hero, badges, feature grids, and CTA section.
+  - path: /fincas
+    file: resources/views/pages/fincas.blade.php
+    auth_required: false
+    description: Property management page with hero, badges, and feature sections.
+  - path: /asesoria
+    file: resources/views/pages/asesoria.blade.php
+    auth_required: false
+    description: Advisory page covering economic, fiscal, and labor support.
+  - path: /comparativa-tipografia
+    file: resources/views/pages/font-compare.blade.php
+    auth_required: false
+    description: Typography comparison page used to evaluate alternative sans-serif fonts.
+  - path: /area-clientes
+    file: resources/views/pages/client-portal.blade.php
+    auth_required: false
+    description: Public client portal teaser page describing the planned private area.
+  - path: /contacto
+    file: resources/views/pages/contact.blade.php
+    auth_required: false
+    description: Contact page with form, contact details, and follow-up guidance.
+  - path: /ubicacion
+    file: resources/views/pages/ubicacion.blade.php
+    auth_required: false
+    description: Location page with address details, directions link, and embedded map.
+  - path: /dashboard
+    file: resources/views/dashboard.blade.php
+    auth_required: true
+    description: Authenticated dashboard shell.
+  - path: /settings
+    file: routes/settings.php
+    auth_required: true
+    description: Redirects to profile settings.
+  - path: /settings/profile
+    file: routes/settings.php
+    auth_required: true
+    description: Livewire profile settings page.
+  - path: /settings/appearance
+    file: routes/settings.php
+    auth_required: true
+    description: Livewire appearance settings page.
+  - path: /settings/security
+    file: routes/settings.php
+    auth_required: true
+    description: Livewire security settings page with password confirmation.
+  - path: /.well-known/passkey-endpoints
+    file: routes/settings.php
+    auth_required: false
+    description: JSON endpoint used by passkey enrollment and management flows.
+  - path: /login
+    file: routes/fortify-generated
+    auth_required: false
+    description: Authentication login page.
+  - path: /register
+    file: routes/fortify-generated
+    auth_required: false
+    description: Authentication registration page.
+  - path: /forgot-password
+    file: routes/fortify-generated
+    auth_required: false
+    description: Password reset request page.
+  - path: /reset-password/{token}
+    file: routes/fortify-generated
+    auth_required: false
+    description: Password reset form page.
+  - path: /verify-email
+    file: routes/fortify-generated
+    auth_required: true
+    description: Email verification prompt page.
+  - path: /confirm-password
+    file: routes/fortify-generated
+    auth_required: true
+    description: Password confirmation page.
+  - path: /two-factor-challenge
+    file: routes/fortify-generated
+    auth_required: false
+    description: Two-factor authentication challenge page.
+features:
+  - name: Public marketing site
+    description: Public pages use a shared layout with navigation, footer, theme toggle, and branded visual sections.
+    files:
+      - resources/views/components/layouts/public.blade.php
+      - resources/views/components/layouts/public/header.blade.php
+      - resources/views/components/layouts/public/footer.blade.php
+      - resources/views/components/main-links.blade.php
+    entry_route: /
+    user_interactions:
+      - Open the home page and navigate between public routes.
+      - Toggle the theme from the header.
+      - Use primary and secondary CTA links from hero sections.
+    api_calls: []
+    auth_required: false
+  - name: Hero sections
+    description: Reusable hero component renders eyebrow text, title, intro, badges, CTA buttons, optional art, and optional stats.
+    files:
+      - resources/views/components/sections/hero.blade.php
+      - resources/views/home.blade.php
+      - resources/views/pages/servicios.blade.php
+      - resources/views/pages/fincas.blade.php
+      - resources/views/pages/asesoria.blade.php
+    entry_route: /
+    user_interactions:
+      - Read hero copy and badges.
+      - Click the primary and secondary CTA buttons.
+      - Inspect optional hero art and stats blocks.
+    api_calls: []
+    auth_required: false
+  - name: Services and advisory content
+    description: Services and advisory pages present structured feature grids and CTA blocks describing the business offering.
+    files:
+      - resources/views/pages/servicios.blade.php
+      - resources/views/pages/asesoria.blade.php
+      - resources/views/components/sections/features.blade.php
+    entry_route: /servicios
+    user_interactions:
+      - Read the service cards and feature sections.
+      - Follow the CTAs to contact or compare service pages.
+    api_calls: []
+    auth_required: false
+  - name: Property management content
+    description: Property management page explains day-to-day community administration with badges, feature sections, and CTA block.
+    files:
+      - resources/views/pages/fincas.blade.php
+      - resources/views/components/sections/features.blade.php
+    entry_route: /fincas
+    user_interactions:
+      - Read the property management hero and supporting sections.
+      - Follow links to contact or services.
+    api_calls: []
+    auth_required: false
+  - name: Contact and location flows
+    description: Contact and location pages expose contact details, a contact form shell, directions link, and embedded map.
+    files:
+      - resources/views/pages/contact.blade.php
+      - resources/views/pages/ubicacion.blade.php
+      - resources/views/components/protected-email-link.blade.php
+    entry_route: /contacto
+    user_interactions:
+      - Fill out the contact form fields.
+      - Use the phone, email, and location details.
+      - Open the Google Maps directions link.
+    api_calls: []
+    auth_required: false
+  - name: Typography comparison page
+    description: Comparison page evaluates three sans-serif fonts and recommends a winner for the brand.
+    files:
+      - resources/views/pages/font-compare.blade.php
+    entry_route: /comparativa-tipografia
+    user_interactions:
+      - Compare the font specimen cards.
+      - Read the recommendation and rationale.
+    api_calls: []
+    auth_required: false
+  - name: Client portal teaser
+    description: Public area-clients page explains the planned private portal and lists future modules.
+    files:
+      - resources/views/pages/client-portal.blade.php
+    entry_route: /area-clientes
+    user_interactions:
+      - Read the portal explanation.
+      - Follow the call to contact the business.
+    api_calls: []
+    auth_required: false
+  - name: Authentication and account settings
+    description: Fortify-backed auth pages and Livewire settings pages handle login, registration, password reset, verification, and user settings.
+    files:
+      - resources/views/pages/auth/login.blade.php
+      - resources/views/pages/auth/register.blade.php
+      - resources/views/pages/auth/forgot-password.blade.php
+      - resources/views/pages/auth/reset-password.blade.php
+      - resources/views/pages/auth/verify-email.blade.php
+      - resources/views/pages/auth/confirm-password.blade.php
+      - resources/views/pages/auth/two-factor-challenge.blade.php
+      - routes/settings.php
+    entry_route: /login
+    user_interactions:
+      - Sign in with email and password.
+      - Request a password reset link.
+      - Manage profile, appearance, and security settings.
+    api_calls: []
+    auth_required: true
+known_limitations:
+  - issue: The contact form is a frontend shell and does not show a real submission endpoint in the view.
+    location: resources/views/pages/contact.blade.php
+    impact: TestSprite can validate the rendered form but not an end-to-end backend submission flow from this file alone.
+  - issue: The home page includes remote image references and a Vite entrypoint for GSAP.
+    location: resources/views/home.blade.php
+    impact: Browser tests may need the asset pipeline running to fully validate visual behavior.

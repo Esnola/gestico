@@ -1,10 +1,17 @@
 {
   "mcpServers": {
     "laravel-boost": {
-      "command": "/Users/juanjosegonzalez/Library/Application Support/Herd/bin/php84",
+      "command": "/Users/juanjose/Library/Application Support/Herd/bin/php",
       "args": [
-        "/Users/juanjosegonzalez/PhpstormProjects/gestico/artisan",
+        "/Users/juanjose/PhpstormProjects/gestico/artisan",
         "boost:mcp"
+      ]
+    },
+    "TestSprite": {
+      "command": "sh",
+      "args": [
+        "-lc",
+        "API_KEY=\"$TESTSPRITE_API_KEY\" npx @testsprite/testsprite-mcp@latest"
       ]
     }
   }
