@@ -1,5 +1,4 @@
-<div data-card-inicio class="relative isolate lg:mr-8">
-    <div class="relative z-10 rounded-2xl border border-brand-border bg-white p-3 ring-1 ring-black/5 dark:border-brand-night-border dark:bg-brand-night-panel">
+ <div data-card-inicio class="relative isolate z-10 rounded-2xl border border-brand-border bg-white p-3 ring-1 ring-black/5 dark:border-brand-night-border dark:bg-brand-night-panel">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" class="h-full w-full">
         <rect width="100%" height="100%" rx="28" fill="var(--color-brand-surface)"/>
         <rect x="88" y="92" width="236" height="296" rx="16"
@@ -45,5 +44,4 @@
               stroke-width="5"
               opacity=".12"/>
         </svg>
-    </div>
 </div>

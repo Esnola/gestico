@@ -56,9 +56,8 @@
   </x-sections.hero>
 
   <x-sections.features
-      section-class="bg-white py-20 sm:py-24 dark:bg-brand-night-panel"
-      container-class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
-      grid-class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
+    container-class="lg:flex-row-reverse"
+      grid-class="mt-10 grid gap-5 md:grid-cols-2"
       card-class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
       intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
       text-class="mt-4 leading-7 text-brand-text-card dark:text-brand-night-muted"
@@ -69,8 +68,7 @@
   />
 
   <x-sections.features
-      section-class="bg-brand-cream py-20 sm:py-24 dark:bg-brand-night"
-      container-class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_.95fr] lg:px-8"
+      {{--        container-class=""--}}
       grid-class="grid gap-4 sm:grid-cols-2"
       card-class="rounded-md border border-brand-border bg-white p-5 dark:border-brand-night-border dark:bg-brand-night-raised"
       intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"

@@ -11,12 +11,12 @@
     'datos' => '',
 ])
 
-<section class="relative grid lg:grid-cols-2 min-h-dvh overflow-hidden bg-brand-mist dark:bg-brand-night mx-auto mt-4 gap-12 px-4 sm:px-6
-  lg:items-center justify-center lg:px-28 {{ $sectionClass }}">
+<section class="relative min-h-dvh overflow-hidden bg-brand-mist dark:bg-brand-night mx-auto mt-4 px-6 lg:px-28 pt-6 pb-16 ">
+    <div class="grid lg:grid-cols-2 gap-x-12 lg:items-center justify-center {{ $sectionClass }}">
         <div class="max-w-4xl">
             <p class="text-sm font-normal uppercase text-brand-gold dark:text-brand-night-gold">{{ $eyebrow }}</p>
             <h1 data-typewriter
-                class="mt-5 font-gestico-serif text-4xl font-semibold tracking-tighter text-brand-ink dark:text-brand-night-text sm:text-5xl lg:text-6xl">
+                class="mt-5 font-gestico-serif text-4xl font-semibold text-brand-ink dark:text-brand-night-text sm:text-5xl lg:text-6xl">
                 {{ $title }}
             </h1>
             <div class="mt-8 flex flex-col gap-3">
@@ -44,7 +44,7 @@
                 @endif
                 <div class="flex items-center justify-center gap-6 mb-16 ">
                     <a href="{{ route($primaryCtaHref) }}"
-                       class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-brand-gold hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:hover:bg-brand-gold-bright text-sm font-normal text-white dark:text-brand-night shadow-sm transition">
+                       class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-brand-gold hover:bg-brand-gold-hover dark:bg-brand-night-gold dark:hover:bg-brand-gold-soft text-sm font-normal text-white dark:text-brand-night dark:hover:text-white shadow-sm transition">
                         {{ $primaryCtaLabel }}
                     </a>
                     <a href="{{ route($secondaryCtaHref) }}"
@@ -53,18 +53,18 @@
                     </a>
                 </div>
             </div>
-
-            @if (filled($datos))
-                <div class="mt-10 grid gap-4 sm:grid-cols-3">
-                    @foreach (config($datos) as $stat)
-                        <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel">
-                            <p class="font-gestico-serif text-3xl font-semibold text-brand-gold dark:text-brand-night-gold">{{ $stat['value'] }}</p>
-                            <p class="mt-1 text-xs font-normal text-brand-text-light dark:text-brand-night-muted">{{ $stat['text'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
         </div>
 
         {{ $art ?? '' }}
+    </div>
+    @if (filled($datos))
+        <div class="mx-auto grid gap-4 sm:grid-cols-3 mt-6 sm:max-w-fit">
+            @foreach (config($datos) as $stat)
+                <div class="rounded-lg border border-brand-border-muted bg-white/70 p-4 dark:border-brand-night-border dark:bg-brand-night-panel">
+                    <p class="font-gestico-serif text-3xl font-semibold text-brand-gold dark:text-brand-night-gold">{{ $stat['value'] }}</p>
+                    <p class="mt-1 text-xs font-normal text-brand-text-light dark:text-brand-night-muted">{{ $stat['text'] }}</p>
+                </div>
+            @endforeach
+        </div>
+    @endif
 </section>

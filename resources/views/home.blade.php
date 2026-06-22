@@ -10,7 +10,9 @@
           datos="gestico.home_hero"
   >
     <x-slot:art>
-          <x-sections.hero-art-card-one/>
+        <div class="transform -translate-y-16">
+            <x-sections.hero-art-card-one/>
+        </div>
     </x-slot:art>
 
   </x-sections.hero>
@@ -31,7 +33,7 @@
 
   <x-sections.client-portal
           eyebrow="Área de clientes"
-          title="La información privada llegará en la siguiente fase."
+          title="Esto se montará o no, depende de las exigencias."
           text="Dejamos preparada la puerta de acceso para que presidentes, juntas y propietarios puedan consultar documentación, movimientos, informes y comunicaciones cuando construyamos la zona privada."
           cta-label="Ver planteamiento del portal"
           :cta-href="route('client-portal')"
