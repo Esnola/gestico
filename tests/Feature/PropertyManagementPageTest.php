@@ -12,8 +12,10 @@ class PropertyManagementPageTest extends TestCase
 
         $response
             ->assertOk()
+            ->assertSee('home-gsap', false)
             ->assertSee('min-h-dvh', false)
             ->assertSeeText('Administración de fincas')
+            ->assertSee('data-typewriter', false)
             ->assertSeeText('Administración pensada para resolver el día a día de la comunidad.')
             ->assertSeeText('Acuerdos y seguimiento')
             ->assertSeeText('Cuotas y proveedores')
@@ -24,10 +26,14 @@ class PropertyManagementPageTest extends TestCase
             ->assertSeeText('Solicitar información')
             ->assertSeeText('Ver servicios')
             ->assertSeeText('La comunidad necesita alguien que ordene, explique y proporcione seguimiento.')
-            ->assertSeeText('Vecino moroso')
+            ->assertSeeText('Control Cuotas')
             ->assertSeeText('Obras y derramas')
             ->assertSeeText('Cada actuación queda conectada con un acuerdo, un gasto o una obligación concreta.')
             ->assertSeeText('Después de aprobar')
-            ->assertSee('data-service-icon', false);
+            ->assertSee('data-service-icon', false)
+            ->assertSee('data-gsap-stagger', false)
+            ->assertSee('data-gsap-stagger-item', false)
+            ->assertSee('data-gsap-card-emphasis-icon', false)
+            ->assertSee('data-gsap-card-emphasis-number', false);
     }
 }

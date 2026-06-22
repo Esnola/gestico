@@ -3,13 +3,8 @@
       eyebrow="Asesoría"
       title="Cuentas, impuestos y obligaciones laborales con una lectura clara."
       intro="La parte económica de una comunidad no solo exige cumplir plazos. También requiere criterio para interpretar gastos, anticipar desviaciones y explicar cada movimiento con lenguaje comprensible para la junta."
-      :badges="[
-          ['label' => 'Contabilidad', 'icon' => 'calculator'],
-          ['label' => 'Fiscalidad', 'icon' => 'file-check'],
-          ['label' => 'Laboral', 'icon' => 'shield-check'],
-          ['label' => 'Previsión y control', 'icon' => 'chart-line'],
-      ]"
-      {{--section-class=""--}}
+      :badges="config('gestico.content.asesoria-badges')"
+      section-class="lg:flex-row-reverse"
       primary-cta-label="Pedir asesoría"
       primary-cta-href='contacto'
       secondary-cta-label="Ver servicios"
@@ -56,7 +51,7 @@
   </x-sections.hero>
 
   <x-sections.features
-    container-class="lg:flex-row-reverse"
+      {{--        container-class=""--}}
       grid-class="mt-10 grid gap-5 md:grid-cols-2"
       card-class="rounded-md border border-brand-border-warm bg-brand-surface p-6 dark:border-brand-night-border dark:bg-brand-night-raised"
       intro-text-class="mt-5 text-lg leading-7 text-brand-text-muted dark:text-brand-night-muted"
@@ -65,6 +60,7 @@
       title="La asesoría funciona mejor cuando la información económica no llega tarde ni fragmentada."
       text="Integramos contabilidad, fiscalidad y gestión laboral en un mismo circuito para que la comunidad pueda tomar decisiones con datos fiables y sin depender de hojas sueltas o explicaciones improvisadas."
       items='gestico.asesoria-cubrimos'
+      :animateCards="true"
   />
 
   <x-sections.features
@@ -77,6 +73,7 @@
       title="Un circuito económico sencillo para que cada decisión tenga contexto y respaldo."
       text="La asesoría aporta más valor cuando no se limita a presentar obligaciones. Revisamos el movimiento económico, ordenamos la documentación de soporte y dejamos el expediente listo para consulta, revisión o junta."
       items='gestico.asesoria-trabajamos'
+      :animateCards="true"
   />
 
   <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24" >
@@ -86,21 +83,25 @@
           Valor añadido</p>
         <div class="mt-5 grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
           <div>
-            <h2 class="font-gestico-serif text-3xl font-semibold leading-tight sm:text-4xl">La cifra correcta importa,
-              pero también la explicación que la acompaña.</h2>
-            <p class="mt-4 max-w-2xl text-lg leading-7 text-brand-frost">Nuestro objetivo es que la comunidad entienda
-              qué se paga, por qué se paga y cómo impacta cada decisión en la estabilidad económica del edificio.</p>
+            <h2 class="font-gestico-serif text-3xl font-semibold leading-tight sm:text-4xl">
+                La cifra correcta importa, pero también la explicación que la acompaña.</h2>
+            <p class="mt-4 max-w-2xl text-lg leading-7 text-brand-frost">
+                Nuestro objetivo es que la comunidad entienda qué se paga, por qué se paga y cómo impacta cada decisión en la estabilidad económica del edificio.</p>
           </div>
           <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
             <a href="{{ route('contacto') }}"
-               class="inline-flex justify-center rounded-md bg-brand-gold-bright px-6 py-3 text-sm font-normal text-brand-ink transition hover:bg-brand-gold-soft dark:bg-brand-night-gold dark:text-brand-night">Pedir
-              asesoría</a>
+               class="inline-flex justify-center rounded-md bg-brand-gold-bright px-6 py-3 text-sm font-normal text-brand-ink transition hover:bg-brand-gold-soft dark:bg-brand-night-gold dark:text-brand-night">
+                Pedir asesoría
+            </a>
             <a href="{{ route('servicios') }}"
-               class="inline-flex justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-normal text-white transition hover:bg-white/10">Ver
-              servicios</a>
+               class="inline-flex justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-normal text-white transition hover:bg-white/10">
+                Ver servicios
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </x-layouts.public>
+
+@vite(['resources/js/home-gsap.js'])

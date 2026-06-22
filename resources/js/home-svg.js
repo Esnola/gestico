@@ -4,6 +4,9 @@ const inicioCardSelector = '[data-card-inicio]';
 const inicioCardShapeSelector = 'rect, circle, path, line, polyline, polygon';
 const inicioCardDrawSelector = '[data-inicio-svg-draw]';
 const inicioCardAccentSelector = '[data-inicio-svg-accent]';
+const cardRevealDistance = '-100vw';
+const cardRevealDuration = 1;
+const cardRevealTriggerRatio = 0.7;
 
 const getShapeLength = (shape) => {
     if (typeof shape.getTotalLength !== 'function') {
@@ -89,11 +92,17 @@ export const hideInicioCardSvgs = () => {
         return;
     }
 
+    const cards = illustrations.map(({card}) => card);
     const svgs = illustrations.map(({svg}) => svg);
     const motionTargets = illustrations.flatMap(({motionTargets}) => motionTargets);
     const drawTargets = illustrations.flatMap(({drawTargets}) => drawTargets);
     const accentTargets = illustrations.flatMap(({accentTargets}) => accentTargets);
     const backgroundShapes = illustrations.map(({backgroundShape}) => backgroundShape).filter(Boolean);
+
+    gsap.set(cards, {
+        autoAlpha: 0,
+        x: cardRevealDistance,
+    });
 
     gsap.set([...svgs, ...motionTargets, ...drawTargets, ...accentTargets], {
         autoAlpha: 0,
@@ -112,6 +121,7 @@ export const initializeInicioCardSvgAnimations = () => {
     }
 
     const svgs = illustrations.map(({svg}) => svg);
+    const cards = illustrations.map(({card}) => card);
     const motionTargets = illustrations.flatMap(({motionTargets}) => motionTargets);
     const drawTargets = illustrations.flatMap(({drawTargets}) => drawTargets);
     const accentTargets = illustrations.flatMap(({accentTargets}) => accentTargets);
@@ -123,12 +133,19 @@ export const initializeInicioCardSvgAnimations = () => {
             },
         });
 
-        illustrations.forEach(({accentTargets: localAccentTargets, drawTargets: localDrawTargets, motionTargets: localMotionTargets, svg}, index) => {
+        illustrations.forEach(({accentTargets: localAccentTargets, card, drawTargets: localDrawTargets, motionTargets: localMotionTargets, svg}, index) => {
             const offset = index * 0.14;
             const idleOffset = index % 2 === 0 ? -4 : 4;
+            const svgRevealOffset = offset + (cardRevealDuration * cardRevealTriggerRatio);
             const revealTargets = gsap.utils.shuffle([...localMotionTargets, ...localDrawTargets, ...localAccentTargets]);
 
             timeline
+                .to(card, {
+                    autoAlpha: 1,
+                    duration: cardRevealDuration,
+                    ease: 'none',
+                    x: 0,
+                }, offset)
                 .to(svg, {
                     autoAlpha: 1,
                     duration: 0.4,
@@ -145,7 +162,7 @@ export const initializeInicioCardSvgAnimations = () => {
                         from: 'random',
                     },
                     y: 0,
-                }, offset + 0.08)
+                }, svgRevealOffset)
                 .to(localDrawTargets, {
                     duration: 0.88,
                     ease: 'power2.out',
@@ -154,7 +171,7 @@ export const initializeInicioCardSvgAnimations = () => {
                         from: 'random',
                     },
                     strokeDashoffset: 0,
-                }, offset + 0.18)
+                }, svgRevealOffset + 0.1)
                 .add(() => {
                     if (!localAccentTargets.length) {
                         return;
@@ -172,23 +189,23 @@ export const initializeInicioCardSvgAnimations = () => {
                         transformOrigin: '50% 50%',
                         y: 0,
                     });
-                }, offset + 0.42)
+                }, svgRevealOffset + 0.34)
                 .add(() => {
                     gsap.to(svg, {
                         duration: 0.9,
                         ease: 'sine.inOut',
                         y: idleOffset,
                     });
-                }, offset + 0.48);
+                }, svgRevealOffset + 0.4);
         });
     };
 
     animateGroupWhenVisible(illustrations.map(({card}) => card), () => {
-        gsap.killTweensOf([...svgs, ...motionTargets, ...drawTargets, ...accentTargets]);
+        gsap.killTweensOf([...cards, ...svgs, ...motionTargets, ...drawTargets, ...accentTargets]);
         animateIllustrations();
     });
 };
 
-if (typeof document !== 'undefined') {
+if (typeof document !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     hideInicioCardSvgs();
 }

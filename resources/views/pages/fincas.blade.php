@@ -9,7 +9,7 @@
             ['label' => 'Incidencias y mantenimiento', 'icon' => 'house'],
             ['label' => 'Documentación en orden', 'icon' => 'file-lines'],
         ]"
-          section-class="lg:flex-row-reverse!"
+          {{--section-class=""--}}
           primary-cta-label="Solicitar información"
           primary-cta-href='contacto'
           secondary-cta-label="Ver servicios"
@@ -29,8 +29,8 @@
               </h2>
             </div>
             <span class="rounded-full border border-brand-border-warm bg-brand-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-brand-gold dark:border-brand-night-border dark:bg-brand-night-panel dark:text-brand-night-gold">
-                            Control
-                        </span>
+                Control
+            </span>
           </div>
 
           <div class="mt-6 grid gap-3">
@@ -84,6 +84,7 @@
           title="La comunidad necesita alguien que ordene, explique y proporcione seguimiento."
           text="La administración de fincas no es solo tramitar papeles. También es interpretar los acuerdos de la junta, coordinar proveedores, avisar a tiempo de los plazos y mantener una relación clara entre vecinos, presidencia y comunidad."
           items='gestico.fincas-hacemos'
+          :animateCards="true"
   />
 
   <x-sections.features
@@ -97,6 +98,7 @@
           title="La administración aporta más valor cuando hay problemas que no conviene dejar para después."
           text="Cada comunidad tiene momentos en los que necesita apoyo más allá del trámite básico: una obra que se complica, un recibo pendiente, un siniestro, un vecino que necesita respuestas o una junta que exige claridad y orden."
           items='gestico.fincas-situaciones'
+          :animateCards="true"
   />
 
   <x-sections.features
@@ -110,6 +112,7 @@
           title="Cada actuación queda conectada con un acuerdo, un gasto o una obligación concreta."
           text="Una buena administración evita que la comunidad dependa de memoria informal: cada reparación, reclamación, presupuesto o comunicación debe poder explicarse con contexto y documentación."
           items='gestico.fincas-gestion'
+          :animateCards="true"
   />
 
   <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24">
@@ -138,3 +141,5 @@
     </div>
   </section>
 </x-layouts.public>
+
+@vite(['resources/js/home-gsap.js'])

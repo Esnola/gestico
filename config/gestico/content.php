@@ -79,6 +79,13 @@ return [
         ['03', 'Seguimiento', 'Controlamos vencimientos, incidencias y desviaciones para actuar antes de que crezcan.'],
         ['04', 'Explicación', 'Traducimos los números a un lenguaje claro para la junta y los propietarios.'],
     ],
+    'asesoria-badges' => [
+        ['label' => 'Contabilidad', 'icon' => 'calculator'],
+        ['label' => 'Fiscalidad', 'icon' => 'file-check'],
+        ['label' => 'Laboral', 'icon' => 'shield-check'],
+        ['label' => 'Previsión y control', 'icon' => 'chart-line'],
+    ],
+    /*** //   #####   Página de contacto   ###### // */
     'contact' => [
         ['title' => 'Tamaño y órganos', 'text' => 'Número de propietarios, presidencia, junta directiva y frecuencia de reuniones.'],
         ['title' => 'Situación económica', 'text' => 'Cuotas, morosidad, fondo disponible, derramas previstas y gastos recurrentes.'],

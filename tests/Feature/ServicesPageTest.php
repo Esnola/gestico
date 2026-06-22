@@ -13,8 +13,10 @@ class ServicesPageTest extends TestCase
 
         $response
             ->assertOk()
+            ->assertSee('home-gsap', false)
             ->assertSee('min-h-dvh', false)
             ->assertSeeText('Servicios')
+            ->assertSee('data-typewriter', false)
             ->assertSeeText('Gestión con visión práctica, control económico y respuesta ágil.')
             ->assertSeeText('Gestión económica')
             ->assertSeeText('Juntas y actas')
@@ -30,6 +32,10 @@ class ServicesPageTest extends TestCase
             ->assertSeeText('Convertimos las obligaciones de la comunidad en tareas visibles y controladas.')
             ->assertSeeText('Libro de acuerdos')
             ->assertSee('data-service-icon', false)
+            ->assertSee('data-gsap-stagger', false)
+            ->assertSee('data-gsap-stagger-item', false)
+            ->assertSee('data-gsap-card-emphasis-icon', false)
+            ->assertSee('data-gsap-card-emphasis-number', false)
             ->assertSeeText('La transparencia importa tanto como la gestión.');
 
         expect(substr_count($content, 'bg-white py-24 dark:bg-brand-night-panel'))->toBe(2);

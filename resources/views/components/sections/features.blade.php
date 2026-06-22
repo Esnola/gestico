@@ -13,7 +13,8 @@
     'itemTitleClass' => 'font-gestico-serif text-xl font-semibold text-brand-ink-soft dark:text-brand-night-text',
     'textClass' => 'mt-3 text-sm leading-6 text-brand-text-soft dark:text-brand-night-muted',
     'iconWrapperClass' => 'mb-4 flex items-center rounded-md border border-brand-border-warm bg-white/80 text-brand-gold dark:border-brand-night-border dark:bg-brand-night-raised/90 dark:text-brand-night-gold',
-    'iconInLine' => false
+    'iconInLine' => false,
+    'animateCards' => false,
 ])
 
 @php
@@ -38,7 +39,7 @@
             @endif
         </div>
 
-        <div class="mt-10 grid gap-4 md:grid-cols-2 {{ $gridClass }}">
+        <div @if ($animateCards) data-gsap-stagger @endif class="mt-10 grid gap-4 md:grid-cols-2 {{ $gridClass }}">
             @foreach ($resolvedItems as $item)
                 @php
                     $isIndexedTriplet = array_is_list($item) && count($item) === 3;
@@ -50,13 +51,13 @@
                     $itemStepClass = $item['stepClass'] ?? $stepClass;
                     $itemTextClass = $item['textClass'] ?? ($step !== null ? 'mt-3 text-sm leading-6 text-brand-frost' : $textClass);
                 @endphp
-                <div class="{{ $cardClass }}">
+                <div @if ($animateCards) data-gsap-stagger-item @endif class="{{ $cardClass }}">
                     @if ($step)
-                        <p class="{{ $itemStepClass }}">{{ $step }}</p>
+                        <p data-gsap-card-emphasis-number class="{{ $itemStepClass }}">{{ $step }}</p>
                     @endif
                     @if ($icon)
                         <div class="{{ $iconWrapperClass }} {{$iconInLine ? 'gap-4 border-0  ' : 'justify-center size-11'}}">
-                            <x-service-icon :type="$icon" class="size-8 stroke-1"/>
+                            <x-service-icon :type="$icon" class="size-8 stroke-1" data-gsap-card-emphasis-icon/>
                             @if ($iconInLine)
                                 <h3 class="{{ $itemTitleClassOverride }} {{$iconInLine ? 'mt-0!' : ''}}">
                                     {{ $itemTitle }}</h3>

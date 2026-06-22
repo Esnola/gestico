@@ -9,11 +9,12 @@
             ['label' => 'Incidencias y mantenimiento', 'icon' => 'house'],
             ['label' => 'Documentación transparente', 'icon' => 'file-lines'],
         ]"
-        {{--section-class=""--}}
+        section-class="flex-row-reverse!"
         primary-cta-label="Pedir información"
         primary-cta-href='contacto'
         secondary-cta-label="Ver administración de fincas"
         secondary-cta-href='fincas'
+
     >
         <x-slot:art>
             <div class="relative lg:mr-8">
@@ -88,6 +89,7 @@
         text="La Ley de Propiedad Horizontal sitúa al administrador como una figura clave para velar por el régimen de la propiedad, preparar presupuestos, atender reparaciones urgentes, ejecutar acuerdos y custodiar la documentación. Sobre esa base construimos un servicio cercano, organizado y útil para vecinos y propietarios."
         items='gestico.servicios-hacemos'
         :iconInLine="true"
+        :animateCards="true"
     />
 
     <x-sections.features
@@ -100,6 +102,7 @@
         title="Convertimos las obligaciones de la comunidad en tareas visibles y controladas."
         text="La Ley de Propiedad Horizontal marca funciones muy concretas para el administrador: velar por el buen régimen de la finca, preparar planes de gastos, atender conservación, ejecutar acuerdos y custodiar documentación."
         items='gestico.servicios-normativa'
+        :animateCards="true"
     />
 
     <x-sections.features
@@ -112,6 +115,7 @@
         title="Un flujo claro para que cada incidencia tenga seguimiento y cada decisión tenga contexto."
         text="Nuestra forma de trabajar combina atención directa, orden documental y seguimiento continuo. El objetivo es que la comunidad no dependa de mensajes sueltos ni de decisiones improvisadas."
         items='gestico.servicios-trabajo'
+        :animateCards="true"
     />
 
     <section class="bg-brand-ink-panel py-20 text-white dark:bg-brand-night sm:py-24">
@@ -144,3 +148,5 @@
         </div>
     </section>
 </x-layouts.public>
+
+@vite(['resources/js/home-gsap.js'])

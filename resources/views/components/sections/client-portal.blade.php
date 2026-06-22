@@ -5,6 +5,7 @@
     'ctaLabel',
     'ctaHref',
     'items' => [],
+    'animateCards' => false,
 ])
 @if(config('gestico.activations.home-client-portal'))
 <section class="bg-brand-cream py-24 dark:bg-brand-night-panel">
@@ -22,11 +23,11 @@
         </div>
 
         <div class="rounded-lg border border-brand-border bg-white p-6 dark:border-brand-night-border dark:bg-brand-night-raised">
-            <div class="grid gap-3">
+            <div @if ($animateCards) data-gsap-stagger @endif class="grid gap-3">
                 @foreach ($items as [$itemText, $view, $icon])
-                    <div data-clientes-card
+                    <div data-clientes-card @if ($animateCards) data-gsap-stagger-item @endif
                          class="flex items-center gap-4 rounded-md bg-brand-surface-warm px-4 py-3 text-sm font-normal text-brand-teal-card dark:bg-brand-night-surface dark:text-brand-night-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" stroke="none" fill="currentColor"
+                        <svg @if ($animateCards) data-gsap-card-emphasis-icon @endif xmlns="http://www.w3.org/2000/svg" stroke="none" fill="currentColor"
                              viewBox="{{ $view ? '0 0 24 24' : '0 0 384 512' }}" class="size-8 opacity-80">{!! $icon !!}</svg>
                         {{ $itemText }}
                     </div>

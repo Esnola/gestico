@@ -23,7 +23,11 @@ it('loads the home specific gsap entrypoint only on the home page', function ():
         ->assertOk()
         ->assertSee('home-gsap', false)
         ->assertSee('data-typewriter', false)
-        ->assertSee('data-card-inicio', false);
+        ->assertSee('data-card-inicio', false)
+        ->assertSee('data-gsap-stagger', false)
+        ->assertSee('data-gsap-stagger-item', false)
+        ->assertSee('data-gsap-card-emphasis-icon', false)
+        ->assertSee('data-gsap-card-emphasis-number', false);
 });
 
 it('keeps public pages free from gsap animation hooks', function (string $routeName): void {
@@ -34,7 +38,7 @@ it('keeps public pages free from gsap animation hooks', function (string $routeN
         ->assertDontSee('data-gsap-reveal', false)
         ->assertDontSee('data-gsap-stagger', false)
         ->assertDontSee('data-gsap-stagger-item', false);
-})->with(['servicios', 'asesoria', 'fincas', 'location', 'contacto', 'client-portal']);
+})->with(['location', 'contacto', 'client-portal']);
 
 it('keeps the public client area focused on contact instead of login', function (): void {
     $response = $this->get(route('client-portal'));
