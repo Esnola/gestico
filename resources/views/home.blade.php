@@ -10,9 +10,9 @@
           datos="gestico.home_hero"
   >
     <x-slot:art>
-        <div class="transform -translate-y-16">
-            <x-sections.hero-art-card-one/>
-        </div>
+      <div class="transform -translate-y-16">
+        <x-sections.hero-art-card-one/>
+      </div>
     </x-slot:art>
 
   </x-sections.hero>
@@ -39,6 +39,9 @@
           :cta-href="route('client-portal')"
           :items="config('gestico.home-client-portal')"
   />
+  <img class="Sirv max-w-[420px]!" data-src="https://oxygenados.sirv.com/Images/Apple%20Watch%20white.jpg" alt="">
+  <img src="https://oxygenados.sirv.com/Images/Apple%20Watch%20white.jpg" width="1150" height="auto" alt="">
+
 
 </x-layouts.public>
 
