@@ -19,6 +19,26 @@
   <meta name="description"
         content="{{ $description ?? 'Gestico Barbanza gestiona comunidades de propietarios, administración de fincas y asesoría económico-financiera, fiscal y laboral.' }}">
 
+  <script>
+    (() => {
+      const validThemes = ['light', 'dark'];
+      const fluxThemeStorageKey = 'flux.appearance';
+      const themeStorageKey = 'theme';
+
+      try {
+        const storedTheme = localStorage.getItem(fluxThemeStorageKey) ?? localStorage.getItem(themeStorageKey);
+        const theme = validThemes.includes(storedTheme) ? storedTheme : 'dark';
+
+        localStorage.setItem(fluxThemeStorageKey, theme);
+        localStorage.setItem(themeStorageKey, theme);
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.classList.add('dark');
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @stack('head')
   @fluxAppearance

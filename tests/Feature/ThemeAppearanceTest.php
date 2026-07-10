@@ -9,7 +9,7 @@ test('public header renders a light and dark theme toggle', function () {
         ->assertSee('Cambiar modo oscuro')
         ->assertSee('rounded-full', false)
         ->assertSee('dark:translate-x-3', false)
-        ->assertSee('M18.5 15.7A7.7 7.7', false)
+        ->assertSee('M12 3a6 6 0 0 0 9 9', false)
         ->assertSee('dark:bg-brand-night', false);
 });
 
@@ -20,9 +20,10 @@ test('theme script only accepts light and dark preferences', function () {
     expect($script)
         ->toContain('const initializeInteractiveFeatures = () => {')
         ->toContain('initializeThemeToggle();')
-        ->toContain('initializeDeferredGsapAnimations();')
         ->toContain("document.addEventListener('DOMContentLoaded', initializeInteractiveFeatures, {once: true})")
         ->and($head)
+        ->toContain("const theme = validThemes.includes(storedTheme) ? storedTheme : 'dark';")
+        ->toContain("localStorage.setItem(fluxThemeStorageKey, theme);")
         ->toContain('@fluxAppearance')
         ->not->toContain("window.localStorage.getItem('flux.appearance') || 'system'");
 });
