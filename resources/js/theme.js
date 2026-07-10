@@ -20,7 +20,7 @@ const saveTheme = (theme) => {
     }
 };
 
-const normalizeTheme = (theme) => validThemes.includes(theme) ? theme : 'light';
+const normalizeTheme = (theme) => validThemes.includes(theme) ? theme : 'dark';
 
 const applyTheme = (theme) => {
     const normalizedTheme = normalizeTheme(theme);
